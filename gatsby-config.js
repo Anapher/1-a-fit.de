@@ -1,16 +1,42 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `1-a-fit`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    courses: [
+      [null, null, "Bauch-Fit", null, null],
+      [
+        "Rücken-Fit",
+        "Bauch/Beine/Po",
+        "Bauch-Fit",
+        "Bauch-Fit",
+        "Bauch/Beine/Po",
+      ],
+      ["Bauch/Beine/Po", "Bauch-Fit", "Rücken-Fit", "Rücken-Fit", "Bauch-Fit"],
+      [
+        "Rücken-Fit",
+        "Bauch/Beine/Po",
+        "Bauch-Fit",
+        "Rücken-Fit",
+        "Bauch/Beine/Po",
+      ],
+      ["Bauch-Fit", "Rücken-Fit", "Rücken-Fit", "Bauch-Fit", "Bauch-Fit"],
+      [
+        "Bauch/Beine/Po",
+        "Bauch/Beine/Po",
+        "Bauch/Beine/Po",
+        "Bauch/Beine/Po",
+        "Bauch/Beine/Po",
+      ],
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `data`,
+        path: `${__dirname}/content`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -31,4 +57,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};
