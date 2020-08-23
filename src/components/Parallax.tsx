@@ -6,7 +6,6 @@ import { isDomAvailable } from "../utils/dom";
 
 const useStyles = makeStyles({
   parallax: {
-    height: "90vh",
     maxHeight: "1000px",
     overflow: "hidden",
     position: "relative",

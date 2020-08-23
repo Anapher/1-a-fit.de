@@ -3,6 +3,7 @@ module.exports = {
     title: `1-a-fit`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    copyright: "1-a-fit GmbH",
     courses: [
       [null, null, "Bauch-Fit", null, null],
       [

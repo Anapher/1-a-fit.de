@@ -1,13 +1,9 @@
-import React from "react";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  makeStyles,
-} from "@material-ui/core";
+import React, { useState, useEffect } from "react";
+import { AppBar, Toolbar, Button, makeStyles } from "@material-ui/core";
 import { container } from "../style/shared";
 import classNames from "classnames";
+import Img from "gatsby-image";
+import { useStaticQuery, graphql } from "gatsby";
 
 const useStyles = makeStyles(theme => ({
   appbar: {
@@ -17,6 +13,7 @@ const useStyles = makeStyles(theme => ({
   },
   toolbar: {
     ...container,
+    display: "flex",
   },
   appbarTransparent: {
     backgroundColor: "transparent !important",
@@ -33,22 +30,63 @@ const useStyles = makeStyles(theme => ({
 type Props = {
   transparent?: boolean;
   fixed?: boolean;
+  transparentUntil?: number;
 };
 
-export default function Header({ transparent, fixed }: Props) {
+export default function Header({
+  transparent,
+  fixed,
+  transparentUntil,
+}: Props) {
   const classes = useStyles();
+
+  const data = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "header/logo.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 200) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+
+  const [isTransparent, setIsTransparent] = useState(true);
+
+  const headerColorChange = () => {
+    const windowsScrollTop = window.pageYOffset;
+
+    if (transparentUntil !== undefined)
+      setIsTransparent(windowsScrollTop < transparentUntil);
+  };
+
+  useEffect(() => {
+    if (transparentUntil) {
+      window.addEventListener("scroll", headerColorChange);
+      return () => window.removeEventListener("scroll", headerColorChange);
+    }
+  }, [transparentUntil]);
 
   return (
     <AppBar
       position="relative"
       className={classNames([
         classes.appbar,
-        { [classes.appbarTransparent]: transparent, [classes.fixed]: fixed },
+        {
+          [classes.appbarTransparent]: transparent && isTransparent,
+          [classes.fixed]: fixed,
+        },
       ])}
     >
       <Toolbar className={classes.toolbar}>
-        <Typography variant="h6">1 a fit</Typography>
-        <Button color="inherit">Login</Button>
+        <Img fluid={data.logo.childImageSharp.fluid} style={{ width: 60 }} />
+        <div style={{ flex: 1 }} />
+        <Button color="inherit">Studio</Button>
+        <Button color="inherit" style={{ marginLeft: 16, marginRight: 16 }}>
+          Kurse
+        </Button>
+        <Button color="inherit">Anfahrt</Button>
       </Toolbar>
     </AppBar>
   );
