@@ -14,6 +14,7 @@ import {
 import { container } from "../../style/shared";
 import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
+import Carousel from "../../components/Carousel";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -30,12 +31,18 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Triangle() {
+export default function FitnessInfo() {
   const classes = useStyles();
   const downloadElement = useRef();
   const [signUpDialogOpen, setSignUpDialogOpen] = useState(false);
 
-  const data = useStaticQuery(graphql`
+  const {
+    fitness,
+    lifestyle,
+    health,
+    contract,
+    allFile: { edges },
+  } = useStaticQuery(graphql`
     query {
       fitness: file(relativePath: { eq: "overview/fitness.jpg" }) {
         childImageSharp {
@@ -62,6 +69,18 @@ export default function Triangle() {
         publicURL
         name
       }
+      allFile(filter: { relativePath: { regex: "/landing-page/carousel/" } }) {
+        edges {
+          node {
+            name
+            childImageSharp {
+              fluid(quality: 90, maxWidth: 1000) {
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
+          }
+        }
+      }
     }
   `);
 
@@ -74,10 +93,15 @@ export default function Triangle() {
 
   return (
     <div className={classes.container}>
+      <Carousel
+        images={edges.map(x => ({
+          fluid: x.node.childImageSharp.fluid,
+        }))}
+      />
       <Grid container spacing={6}>
         <Grid item sm={4} xs={12}>
           <Img
-            fluid={data.fitness.childImageSharp.fluid}
+            fluid={fitness.childImageSharp.fluid}
             className={classes.roundedImage}
           />
           <Box display="flex" justifyContent="center">
@@ -86,7 +110,7 @@ export default function Triangle() {
         </Grid>
         <Grid item sm={4} xs={12}>
           <Img
-            fluid={data.lifestyle.childImageSharp.fluid}
+            fluid={lifestyle.childImageSharp.fluid}
             className={classes.roundedImage}
           />
           <Box display="flex" justifyContent="center">
@@ -95,7 +119,7 @@ export default function Triangle() {
         </Grid>
         <Grid item sm={4} xs={12}>
           <Img
-            fluid={data.health.childImageSharp.fluid}
+            fluid={health.childImageSharp.fluid}
             className={classes.roundedImage}
           />
           <Box display="flex" justifyContent="center">
@@ -110,7 +134,7 @@ export default function Triangle() {
         <a
           ref={downloadElement}
           download="Mitgliedsvertrag"
-          href={data.contract.publicURL}
+          href={contract.publicURL}
           style={{ display: "none" }}
         />
       </Box>

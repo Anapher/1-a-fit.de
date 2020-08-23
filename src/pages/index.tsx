@@ -1,21 +1,19 @@
+import { Box, makeStyles } from "@material-ui/core";
 import React from "react";
-import { Link } from "gatsby";
-
 import Layout from "../components/Layout";
 import SEO from "../components/seo";
-import LandingPage from "./index-sections/LandingPage";
-import { makeStyles, Box } from "@material-ui/core";
 import Courses from "./index-sections/Courses";
-import Triangle from "./index-sections/Triangle";
+import FitnessInfo from "./index-sections/FitnessInfo";
+import LandingPage from "./index-sections/LandingPage";
 
 const useStyles = makeStyles(theme => ({
   content: {
     background: "#FFFFFF",
     position: "relative",
     zIndex: 3,
-    paddingTop: 50,
+    paddingTop: 15,
     [theme.breakpoints.up("sm")]: {
-      paddingTop: 120,
+      paddingTop: 80,
     },
   },
 }));
@@ -27,7 +25,7 @@ const IndexPage = () => {
       <SEO title="Home" />
       <LandingPage />
       <div className={classes.content}>
-        <Triangle />
+        <FitnessInfo />
         <Box mt={16}>
           <Courses />
         </Box>
