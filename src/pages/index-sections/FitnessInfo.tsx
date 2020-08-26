@@ -127,7 +127,7 @@ export default function FitnessInfo() {
           </Box>
         </Grid>
       </Grid>
-      <Box display="flex" justifyContent="center" mt={6}>
+      <Box display="flex" justifyContent="center" mt={12}>
         <Button variant="contained" color="primary" onClick={signUp}>
           Jetzt Mitglied werden
         </Button>

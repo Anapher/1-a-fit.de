@@ -1,7 +1,8 @@
 import React from "react";
-import { CssBaseline, makeStyles } from "@material-ui/core";
+import { CssBaseline, makeStyles, ThemeProvider } from "@material-ui/core";
 import Header from "./Header";
 import Footer, { FOOTER_HEIGHT_PX } from "./Footer";
+import theme from "../style/theme";
 
 type Props = {
   elevateAppBar?: boolean;
@@ -24,14 +25,16 @@ export default function Layout({ overlayContent, children }: Props) {
   const classes = useStyles();
 
   return (
-    <div>
-      <CssBaseline />
-      <Header transparent fixed transparentUntil={300} />
-      <div className={classes.content}>
-        {!overlayContent && <div className={classes.appbarPlaceholder} />}
-        {children}
-        <Footer />
+    <ThemeProvider theme={theme}>
+      <div>
+        <CssBaseline />
+        <Header transparent fixed transparentUntil={300} />
+        <div className={classes.content}>
+          {!overlayContent && <div className={classes.appbarPlaceholder} />}
+          {children}
+          <Footer />
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   );
 }
