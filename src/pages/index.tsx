@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
 const IndexPage = () => {
   const classes = useStyles();
   return (
-    <Layout overlayContent>
+    <Layout overlayContent transparentUntil={300}>
       <SEO title="Home" />
       <LandingPage />
       <div className={classes.content}>

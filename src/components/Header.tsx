@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Button, makeStyles } from "@material-ui/core";
 import { container } from "../style/shared";
 import classNames from "classnames";
 import Img from "gatsby-image";
-import { useStaticQuery, graphql } from "gatsby";
+import { useStaticQuery, graphql, Link } from "gatsby";
 
 const useStyles = makeStyles(theme => ({
   appbar: {
@@ -80,7 +80,9 @@ export default function Header({
       ])}
     >
       <Toolbar className={classes.toolbar}>
-        <Img fluid={data.logo.childImageSharp.fluid} style={{ width: 60 }} />
+        <Link to="/">
+          <Img fluid={data.logo.childImageSharp.fluid} style={{ width: 60 }} />
+        </Link>
         <div style={{ flex: 1 }} />
         <Button color="inherit">Studio</Button>
         <Button color="inherit" style={{ marginLeft: 16, marginRight: 16 }}>

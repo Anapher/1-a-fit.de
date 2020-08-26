@@ -5,7 +5,6 @@ import Footer, { FOOTER_HEIGHT_PX } from "./Footer";
 import theme from "../style/theme";
 
 type Props = {
-  elevateAppBar?: boolean;
   children?: React.ReactNode;
   transparentUntil?: number;
   fixed?: boolean;
@@ -21,14 +20,22 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Layout({ overlayContent, children }: Props) {
+export default function Layout({
+  overlayContent,
+  children,
+  transparentUntil,
+}: Props) {
   const classes = useStyles();
 
   return (
     <ThemeProvider theme={theme}>
       <div>
         <CssBaseline />
-        <Header transparent fixed transparentUntil={300} />
+        <Header
+          transparent={!!transparentUntil}
+          fixed
+          transparentUntil={transparentUntil}
+        />
         <div className={classes.content}>
           {!overlayContent && <div className={classes.appbarPlaceholder} />}
           {children}

@@ -133,7 +133,7 @@ export default function FitnessInfo() {
         </Button>
         <a
           ref={downloadElement}
-          download="Mitgliedsvertrag"
+          download="Mitgliedsvertrag.pdf"
           href={contract.publicURL}
           style={{ display: "none" }}
         />
