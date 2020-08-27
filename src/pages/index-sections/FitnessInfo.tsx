@@ -29,6 +29,12 @@ const useStyles = makeStyles(theme => ({
       marginRight: 48,
     },
   },
+  membershipButton: {
+    borderRadius: 36,
+    color: "black",
+    borderColor: "black",
+    minWidth: 400,
+  },
 }));
 
 export default function FitnessInfo() {
@@ -128,7 +134,12 @@ export default function FitnessInfo() {
         </Grid>
       </Grid>
       <Box display="flex" justifyContent="center" mt={12}>
-        <Button variant="contained" color="primary" onClick={signUp}>
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={signUp}
+          className={classes.membershipButton}
+        >
           Jetzt Mitglied werden
         </Button>
         <a

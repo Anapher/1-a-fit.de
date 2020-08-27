@@ -40,10 +40,9 @@ export default function Map() {
 
   return (
     <div className={classes.container}>
-      <Typography variant="h5" gutterBottom>
-        Anfahrt
-      </Typography>
-      <Grid container spacing={3}>
+      <Typography variant="h5">Anfahrt</Typography>
+      <Typography variant="body2">Geschäftsführer: Stefan Heiland</Typography>
+      <Grid container spacing={3} style={{ marginTop: 8 }}>
         {[vellmar, kassel].map(m => (
           <Grid item xs={12} md={6}>
             <iframe
@@ -51,6 +50,7 @@ export default function Map() {
               frameBorder={0}
               allowFullScreen={false}
               tabIndex={0}
+              style={{ border: 0 }}
               width="100%"
               height={400}
             />
@@ -64,13 +64,6 @@ export default function Map() {
             </Typography>
           </Grid>
         ))}
-        <Grid xs={12} item>
-          <Box width="100%" display="flex" justifyContent="center">
-            <Typography variant="body2">
-              Geschäftsführer: Stefan Heiland
-            </Typography>
-          </Box>
-        </Grid>
       </Grid>
     </div>
   );
