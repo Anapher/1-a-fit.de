@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 import Courses from "./index-sections/Courses";
 import FitnessInfo from "./index-sections/FitnessInfo";
 import LandingPage from "./index-sections/LandingPage";
+import Map from "./index-sections/Map";
 
 const useStyles = makeStyles(theme => ({
   content: {
@@ -29,6 +30,7 @@ const IndexPage = () => {
         <Box mt={16}>
           <Courses />
         </Box>
+        <Map />
       </div>
     </Layout>
   );
