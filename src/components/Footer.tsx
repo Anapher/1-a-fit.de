@@ -30,6 +30,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   socialLink: {
+    transition: "color 0.5s ease",
     color: "white",
     "&:hover": {
       color: "#b8b8b8",
