@@ -1,9 +1,9 @@
-import React from "react";
-import Parallax from "../../components/Parallax";
+import { makeStyles, Typography } from "@material-ui/core";
 import { graphql, useStaticQuery } from "gatsby";
-import { Grid, Typography, Box, makeStyles } from "@material-ui/core";
+import React from "react";
+import LogoIcon from "../../assets/logo.svg";
+import Parallax from "../../components/Parallax";
 import { container } from "../../style/shared";
-import Img from "gatsby-image";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -19,11 +19,14 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     width: 200,
+    height: 84,
     [theme.breakpoints.down("sm")]: {
       width: 150,
+      height: 63,
     },
     [theme.breakpoints.down("xs")]: {
       width: 120,
+      height: 50,
     },
   },
   subtitleText: {
@@ -77,13 +80,6 @@ function LandingPage() {
           }
         }
       }
-      logo: file(relativePath: { eq: "header/logo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
       site {
         siteMetadata {
           title
@@ -107,14 +103,7 @@ function LandingPage() {
             flexDirection: "column",
           }}
         >
-          <Img fluid={logo.childImageSharp.fluid} className={classes.logo} />
-          {/* <Typography
-            variant="h1"
-            className={classes.titleText}
-            style={{ fontWeight: "bold" }}
-          >
-            {title}
-          </Typography> */}
+          <LogoIcon className={classes.logo} />
           <div className={classes.infoContainer}>
             <div className={classes.card}>
               <Typography variant="h5" className={classes.subtitleText}>

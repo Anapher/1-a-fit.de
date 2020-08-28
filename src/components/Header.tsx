@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { AppBar, Toolbar, Button, makeStyles } from "@material-ui/core";
 import { container } from "../style/shared";
 import classNames from "classnames";
-import Img from "gatsby-image";
 import { useStaticQuery, graphql, Link } from "gatsby";
+import LogoIcon from "../assets/logo.svg";
 
 const useStyles = makeStyles(theme => ({
   appbar: {
@@ -40,18 +40,6 @@ export default function Header({
 }: Props) {
   const classes = useStyles();
 
-  const data = useStaticQuery(graphql`
-    query {
-      logo: file(relativePath: { eq: "header/logo.png" }) {
-        childImageSharp {
-          fluid(maxWidth: 200) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `);
-
   const [isTransparent, setIsTransparent] = useState(true);
 
   const headerColorChange = () => {
@@ -80,8 +68,8 @@ export default function Header({
       ])}
     >
       <Toolbar className={classes.toolbar}>
-        <Link to="/">
-          <Img fluid={data.logo.childImageSharp.fluid} style={{ width: 60 }} />
+        <Link to="/" style={{ height: 25 }}>
+          <LogoIcon style={{ width: 60, height: 25 }} />
         </Link>
         <div style={{ flex: 1 }} />
         <Button color="inherit">Studio</Button>
