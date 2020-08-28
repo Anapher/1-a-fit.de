@@ -39,8 +39,8 @@ export default function Layout({
         <div className={classes.content}>
           {!overlayContent && <div className={classes.appbarPlaceholder} />}
           {children}
-          <Footer />
         </div>
+        <Footer />
       </div>
     </ThemeProvider>
   );

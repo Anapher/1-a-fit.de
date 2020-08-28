@@ -43,6 +43,12 @@ module.exports = {
         info: "Leipziger Str. 149, 34123 Kassel\nTel: 0561 820 828 58",
       },
     },
+    socials: {
+      facebook:
+        "https://de-de.facebook.com/1a-fit-Fitness-Lifestyle-Gesundheit-145923872285252/",
+      instagram: "https://www.instagram.com/1afitfitness/",
+      youtube: "https://www.youtube.com/",
+    },
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

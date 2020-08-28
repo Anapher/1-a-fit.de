@@ -12,14 +12,14 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Impressum() {
+export default function jobs() {
   const classes = useStyles();
 
   const {
     markdownRemark: { html },
   } = useStaticQuery(graphql`
     {
-      markdownRemark(frontmatter: { title: { eq: "Impressum" } }) {
+      markdownRemark(frontmatter: { title: { eq: "Jobs" } }) {
         html
       }
     }
@@ -27,7 +27,7 @@ export default function Impressum() {
   return (
     <Layout>
       <div className={classes.container}>
-        <Typography variant="h4">Impressum</Typography>
+        <Typography variant="h4">Jobs</Typography>
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Layout>
