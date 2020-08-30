@@ -46,9 +46,6 @@ const useStyles = makeStyles(theme => ({
     },
   },
   card: {
-    // backgroundColor: "rgba(0,0,0,.6)",
-    // padding: 32,
-    // borderRadius: 16,
     marginLeft: 48,
     marginRight: 48,
     marginTop: 32,
@@ -60,6 +57,12 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
     },
+    [theme.breakpoints.down("xs")]: {
+      marginTop: 15,
+    },
+  },
+  appbarPlaceholder: {
+    ...theme.mixins.toolbar,
   },
 }));
 
@@ -95,6 +98,7 @@ function LandingPage() {
       style={{ height: "90vh" }}
     >
       <div className={classes.container}>
+        <div className={classes.appbarPlaceholder} />
         <div
           style={{
             display: "flex",

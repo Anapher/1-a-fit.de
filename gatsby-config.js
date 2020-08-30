@@ -94,6 +94,16 @@ module.exports = {
       options: {
         rule: {
           include: /assets/, // See below to configure properly
+          omitKeys: [
+            "xmlnsDc",
+            "xmlnsCc",
+            "xmlnsRdf",
+            "xmlnsSvg",
+            "xmlnsSodipodi",
+            "xmlnsInkscape",
+            "rdfResource",
+            "rdfAbout",
+          ],
         },
       },
     },

@@ -87,7 +87,7 @@ export default function Courses() {
           maxWidth: "100vw",
         }}
       >
-        <div className={classes.container}>
+        <div className={classes.container} id="kurse">
           <Typography
             variant="h3"
             className={classes.sectionHeaderText}

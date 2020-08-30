@@ -4,6 +4,9 @@ import { container } from "../style/shared";
 import classNames from "classnames";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import LogoIcon from "../assets/logo.svg";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
+import to from "../utils/to";
+import Scrollspy from "react-scrollspy";
 
 const useStyles = makeStyles(theme => ({
   appbar: {
@@ -24,6 +27,17 @@ const useStyles = makeStyles(theme => ({
   fixed: {
     position: "fixed",
     zIndex: 1100,
+  },
+  activeSection: {
+    color: theme.palette.secondary.light,
+  },
+  logo: {
+    width: 60,
+    height: 25,
+    [theme.breakpoints.down("xs")]: {
+      width: 45,
+      height: 18.75,
+    },
   },
 }));
 
@@ -68,15 +82,28 @@ export default function Header({
       ])}
     >
       <Toolbar className={classes.toolbar}>
-        <Link to="/" style={{ height: 25 }}>
-          <LogoIcon style={{ width: 60, height: 25 }} />
+        <Link to="/">
+          <LogoIcon className={classes.logo} />
         </Link>
         <div style={{ flex: 1 }} />
-        <Button color="inherit">Studio</Button>
-        <Button color="inherit" style={{ marginLeft: 16, marginRight: 16 }}>
-          Kurse
-        </Button>
-        <Button color="inherit">Anfahrt</Button>
+        <Scrollspy
+          items={["studio", "kurse", "anfahrt"]}
+          currentClassName={classes.activeSection}
+        >
+          <Button color="inherit" {...to("/#studio")}>
+            Studio
+          </Button>
+          <Button
+            color="inherit"
+            style={{ marginLeft: 16, marginRight: 16 }}
+            {...to("/#kurse")}
+          >
+            Kurse
+          </Button>
+          <Button color="inherit" {...to("/#anfahrt")}>
+            Anfahrt
+          </Button>
+        </Scrollspy>
       </Toolbar>
     </AppBar>
   );
