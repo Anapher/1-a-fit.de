@@ -63,7 +63,12 @@ export default function Footer() {
   return (
     <Box component="footer" className={classes.footer}>
       <Container maxWidth="md">
-        <Box padding={4} display="flex" justifyContent="center">
+        <Box
+          paddingTop={4}
+          paddingBottom={4}
+          display="flex"
+          justifyContent="center"
+        >
           <Box
             textAlign="center"
             marginTop={2}
