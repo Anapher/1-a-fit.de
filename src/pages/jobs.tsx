@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { container } from "../style/shared";
 import { makeStyles, Typography } from "@material-ui/core";
+import SEO from "../components/seo";
 
 const useStyles = makeStyles({
   container: {
@@ -26,6 +27,7 @@ export default function jobs() {
   `);
   return (
     <Layout>
+      <SEO title="Jobs" />
       <div className={classes.container}>
         <Typography variant="h4">Jobs</Typography>
         <div dangerouslySetInnerHTML={{ __html: html }} />
