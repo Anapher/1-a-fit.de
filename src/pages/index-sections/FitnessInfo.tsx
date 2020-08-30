@@ -15,6 +15,8 @@ import { container } from "../../style/shared";
 import Img from "gatsby-image";
 import { useStaticQuery, graphql } from "gatsby";
 import Carousel from "../../components/Carousel";
+import eGym_Krafttraining_fuer_jedermann from "../../assets/eGym_Krafttraining_fuer_jedermann.mp4";
+import HoverVideoPlayer from "../../components/HoverVideoPlayer";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -46,6 +48,9 @@ export default function FitnessInfo() {
     fitness,
     lifestyle,
     health,
+    egym,
+    egymApp,
+    egymAd,
     contract,
     allFile: { edges },
   } = useStaticQuery(graphql`
@@ -65,6 +70,24 @@ export default function FitnessInfo() {
         }
       }
       health: file(relativePath: { eq: "overview/health.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      egym: file(relativePath: { eq: "landing-page/egym/logo.png" }) {
+        childImageSharp {
+          fixed(width: 80) {
+            ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      egymApp: file(
+        relativePath: {
+          eq: "landing-page/egym/eGym_Fitness_App_Trainingsplan_direkt_aufs_Handy.png"
+        }
+      ) {
         childImageSharp {
           fluid(maxWidth: 400) {
             ...GatsbyImageSharpFluid
@@ -104,6 +127,46 @@ export default function FitnessInfo() {
           fluid: x.node.childImageSharp.fluid,
         }))}
       />
+      <Grid container style={{ marginTop: 64, marginBottom: 64 }} spacing={4}>
+        <Grid item xs={12}>
+          <Box display="flex" justifyContent="center">
+            <Box display="flex" alignItems="center">
+              <Typography variant="h5" align="center">
+                Entdecke die nächste Generation Fitnessgeräte von
+                <Img
+                  fixed={egym.childImageSharp.fixed}
+                  style={{ marginLeft: 12 }}
+                />
+              </Typography>
+            </Box>
+          </Box>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Img
+            fixed={egymApp.childImageSharp.fluid}
+            style={{ width: "100%", height: 320 }}
+          />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Typography>
+            Der egym Zirkel in deinem 1a fit ermöglicht es dir, mit innovativer
+            Software schnell deine Trainingsziele zu erreichen. Mit
+            Unterstützung von Deinem Trainer kannst Du über einen Bildschirm
+            Dein individuelles Trainingsprogramm wählen. Abnehmen,
+            Figurtraining, Verbesserung der allgemeinen Fitness, Muskelaufbau
+            oder Reha Training – das Training am eGym-Zirkel lässt keine Wünsche
+            oder Ziele offen. Das lästige Einstellen der Sitzposition und des
+            Trainingsgewichts findet mit eGym auch endlich ein Ende, weil alles
+            elektronisch und automatisch erfolgt.
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <HoverVideoPlayer
+            src={eGym_Krafttraining_fuer_jedermann}
+            style={{ height: 320 }}
+          />
+        </Grid>
+      </Grid>
       <Grid container spacing={6}>
         <Grid item sm={4} xs={12}>
           <Img
@@ -133,7 +196,7 @@ export default function FitnessInfo() {
           </Box>
         </Grid>
       </Grid>
-      <Box display="flex" justifyContent="center" mt={12}>
+      <Box display="flex" justifyContent="center" mt={8}>
         <Button
           variant="outlined"
           color="secondary"

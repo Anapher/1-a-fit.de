@@ -43,8 +43,8 @@ export default function Map() {
       <Typography variant="h5">Anfahrt</Typography>
       <Typography variant="body2">Geschäftsführer: Stefan Heiland</Typography>
       <Grid container spacing={3} style={{ marginTop: 8 }}>
-        {[vellmar, kassel].map(m => (
-          <Grid item xs={12} md={6}>
+        {[vellmar, kassel].map((m, i) => (
+          <Grid item xs={12} md={6} key={i + 1}>
             <iframe
               src={m.src}
               frameBorder={0}
