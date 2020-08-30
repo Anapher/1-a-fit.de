@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { container } from "../../style/shared";
 import { makeStyles, Grid, Typography, Box } from "@material-ui/core";
 import { useStaticQuery, graphql } from "gatsby";
@@ -39,12 +39,12 @@ export default function Map() {
   `);
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} id="anfahrt">
       <Typography variant="h5">Anfahrt</Typography>
       <Typography variant="body2">Geschäftsführer: Stefan Heiland</Typography>
       <Grid container spacing={3} style={{ marginTop: 8 }}>
         {[vellmar, kassel].map((m, i) => (
-          <Grid item xs={12} md={6} key={i + 1}>
+          <Grid item xs={12} md={6} key={i.toString()}>
             <iframe
               src={m.src}
               frameBorder={0}
@@ -56,10 +56,10 @@ export default function Map() {
             />
             <Typography>
               {m.info.split("\n").map((x, i) => (
-                <>
+                <Fragment key={x}>
                   {i !== 0 && <br />}
                   {x}
-                </>
+                </Fragment>
               ))}
             </Typography>
           </Grid>
