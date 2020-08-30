@@ -36,6 +36,10 @@ const useStyles = makeStyles(theme => ({
     color: "black",
     borderColor: "black",
     minWidth: 400,
+    [theme.breakpoints.down("xs")]: {
+      minWidth: 0,
+      width: "100%",
+    },
   },
 }));
 
@@ -50,7 +54,6 @@ export default function FitnessInfo() {
     health,
     egym,
     egymApp,
-    egymAd,
     contract,
     allFile: { edges },
   } = useStaticQuery(graphql`
@@ -121,13 +124,23 @@ export default function FitnessInfo() {
   const closeSignUpDialog = () => setSignUpDialogOpen(false);
 
   return (
-    <div className={classes.container}>
+    <div className={classes.container} id="studio">
       <Carousel
         images={edges.map(x => ({
           fluid: x.node.childImageSharp.fluid,
         }))}
       />
-      <Grid container style={{ marginTop: 64, marginBottom: 64 }} spacing={4}>
+      <Grid
+        container
+        style={{
+          marginTop: 64,
+          marginBottom: 64,
+          marginLeft: 0,
+          marginRight: 0,
+          width: "100%",
+        }}
+        spacing={4}
+      >
         <Grid item xs={12}>
           <Box display="flex" justifyContent="center">
             <Box display="flex" alignItems="center">
@@ -143,7 +156,7 @@ export default function FitnessInfo() {
         </Grid>
         <Grid item xs={12} md={4}>
           <Img
-            fixed={egymApp.childImageSharp.fluid}
+            fluid={egymApp.childImageSharp.fluid}
             style={{ width: "100%", height: 320 }}
           />
         </Grid>
@@ -166,8 +179,8 @@ export default function FitnessInfo() {
             style={{ height: 320 }}
           />
         </Grid>
-      </Grid>
-      <Grid container spacing={6}>
+      </Grid>{" "}
+      <Grid container spacing={6} style={{ margin: 0, width: "100%" }}>
         <Grid item sm={4} xs={12}>
           <Img
             fluid={fitness.childImageSharp.fluid}
