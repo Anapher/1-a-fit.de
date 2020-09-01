@@ -1,20 +1,19 @@
 /** must be a fixed height to compute the min height of the content area */
 export const FOOTER_HEIGHT_PX = 160;
 
-import React from "react";
 import {
-  makeStyles,
   Box,
   Container,
-  Typography,
   Divider,
-  IconButton,
+  makeStyles,
+  Typography,
 } from "@material-ui/core";
-import { useStaticQuery, graphql, Link } from "gatsby";
-import to from "../utils/to";
+import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import YouTubeIcon from "@material-ui/icons/YouTube";
-import FacebookIcon from "@material-ui/icons/Facebook";
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import to from "../utils/to";
 
 const useStyles = makeStyles(theme => ({
   footer: {

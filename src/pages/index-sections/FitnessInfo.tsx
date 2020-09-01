@@ -10,6 +10,9 @@ import {
   DialogTitle,
   DialogContent,
   DialogContentText,
+  CardMedia,
+  CardContent,
+  CardActions,
 } from "@material-ui/core";
 import { container } from "../../style/shared";
 import Img from "gatsby-image";
@@ -54,6 +57,7 @@ export default function FitnessInfo() {
     health,
     egym,
     egymApp,
+    globus,
     contract,
     allFile: { edges },
   } = useStaticQuery(graphql`
@@ -92,7 +96,18 @@ export default function FitnessInfo() {
         }
       ) {
         childImageSharp {
-          fluid(maxWidth: 400) {
+          fluid(maxWidth: 600) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      globus: file(
+        relativePath: {
+          eq: "landing-page/egym/PT_w30m30trainer_2158_small.jpg"
+        }
+      ) {
+        childImageSharp {
+          fluid(maxWidth: 600) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -179,7 +194,104 @@ export default function FitnessInfo() {
             style={{ height: 320 }}
           />
         </Grid>
-      </Grid>{" "}
+      </Grid>
+      <>
+        <Typography variant="h4" align="center" gutterBottom>
+          Was wir bieten
+        </Typography>
+        <Grid container spacing={4} style={{ marginBottom: 32 }}>
+          <Grid item md={6} xs={12}>
+            <Card>
+              <CardMedia
+                style={{ height: 250 }}
+                component={Img}
+                fluid={egymApp.childImageSharp.fluid}
+                title="egym"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Entdecke die nächste Generation Fitnessgeräte von
+                  <Img
+                    fixed={egym.childImageSharp.fixed}
+                    style={{ marginLeft: 12 }}
+                  />
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Der egym Zirkel in deinem 1a fit ermöglicht es dir, mit
+                  innovativer Software schnell deine Trainingsziele zu
+                  erreichen. Mit Unterstützung von Deinem Trainer kannst Du über
+                  einen Bildschirm Dein individuelles Trainingsprogramm wählen.
+                  Abnehmen, Figurtraining, Verbesserung der allgemeinen Fitness,
+                  Muskelaufbau oder Reha Training – das Training am eGym-Zirkel
+                  lässt keine Wünsche oder Ziele offen.
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Mehr erfahren
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item md={6} xs={12}>
+            <Card
+              style={{
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <CardMedia
+                style={{ height: 250 }}
+                component={Img}
+                fluid={egymApp.childImageSharp.fluid}
+                title="egym"
+              />
+              <CardContent style={{ flex: 1 }}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Getränkeflatrate - Trinken Sie was Sie wollen
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Egal ob gekühltes Wasser oder aromatisierte Getränke - für nur
+                  4,95€ / Monat können Sie sich ihre 1a fit Flasche so oft
+                  auffüllen, wie Sie wollen.
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Mehr erfahren
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+          <Grid item md={6} xs={12}>
+            <Card>
+              <CardMedia
+                style={{ height: 250 }}
+                component={Img}
+                fluid={globus.childImageSharp.fluid}
+                title="egym"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  Galileo Training - effektiv und gesund trainieren
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  Mit integrierter Wobbel-Funktion: Das Galileo Tool zum
+                  effektiven Training von Gleichgewicht und Koordination. Mit
+                  integrierter Smart Coaching-Funktion: Passt das Training
+                  automatisch an die Fähigkeiten des Benutzers an.
+                </Typography>
+              </CardContent>
+              <CardActions>
+                <Button size="small" color="primary">
+                  Mehr erfahren
+                </Button>
+              </CardActions>
+            </Card>
+          </Grid>
+        </Grid>
+      </>
       <Grid container spacing={6} style={{ margin: 0, width: "100%" }}>
         <Grid item sm={4} xs={12}>
           <Img
