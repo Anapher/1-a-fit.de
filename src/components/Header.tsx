@@ -58,7 +58,10 @@ export default function Header({
   transparentUntil,
 }: Props) {
   const classes = useStyles();
-  const trigger = useScrollTrigger({ threshold: transparentUntil });
+  const trigger = useScrollTrigger({
+    threshold: transparentUntil,
+    disableHysteresis: true,
+  });
 
   return (
     <AppBar

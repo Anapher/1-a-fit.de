@@ -6,6 +6,7 @@ import Courses from "./index-sections/Courses";
 import FitnessInfo from "./index-sections/FitnessInfo";
 import LandingPage from "./index-sections/LandingPage";
 import Map from "./index-sections/Map";
+import WhatWeOffer from "./index-sections/WhatWeOffer";
 
 const useStyles = makeStyles(theme => ({
   content: {
@@ -26,7 +27,12 @@ const IndexPage = () => {
       <SEO title="Home" />
       <LandingPage />
       <div className={classes.content}>
-        <FitnessInfo />
+        <div id="studio">
+          <FitnessInfo />
+          <Box mt={8}>
+            <WhatWeOffer />
+          </Box>
+        </div>
         <Box mt={16}>
           <Courses />
         </Box>
