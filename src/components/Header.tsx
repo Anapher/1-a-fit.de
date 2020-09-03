@@ -1,4 +1,10 @@
-import { AppBar, Button, makeStyles, Toolbar } from "@material-ui/core";
+import {
+  AppBar,
+  Button,
+  makeStyles,
+  Toolbar,
+  useScrollTrigger,
+} from "@material-ui/core";
 import classNames from "classnames";
 import { Link } from "gatsby";
 import React, { useEffect, useState } from "react";
@@ -52,22 +58,7 @@ export default function Header({
   transparentUntil,
 }: Props) {
   const classes = useStyles();
-
-  const [isTransparent, setIsTransparent] = useState(true);
-
-  const headerColorChange = () => {
-    const windowsScrollTop = window.pageYOffset;
-
-    if (transparentUntil !== undefined)
-      setIsTransparent(windowsScrollTop < transparentUntil);
-  };
-
-  useEffect(() => {
-    if (transparentUntil) {
-      window.addEventListener("scroll", headerColorChange);
-      return () => window.removeEventListener("scroll", headerColorChange);
-    }
-  }, [transparentUntil]);
+  const trigger = useScrollTrigger({ threshold: transparentUntil });
 
   return (
     <AppBar
@@ -75,7 +66,7 @@ export default function Header({
       className={classNames([
         classes.appbar,
         {
-          [classes.appbarTransparent]: transparent && isTransparent,
+          [classes.appbarTransparent]: transparent && !trigger,
           [classes.fixed]: fixed,
         },
       ])}
