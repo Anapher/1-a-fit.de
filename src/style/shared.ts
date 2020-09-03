@@ -25,4 +25,9 @@ const container: CreateCSSProperties<{}> = {
   },
 };
 
-export { containerFluid, container };
+const fixedFullWidthGrid: CreateCSSProperties<{}> = {
+  margin: 0,
+  width: "100%",
+};
+
+export { containerFluid, container, fixedFullWidthGrid };

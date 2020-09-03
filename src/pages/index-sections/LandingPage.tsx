@@ -91,7 +91,7 @@ const useStyles = makeStyles(theme => ({
     },
   },
   horizontalLine: {
-    backgroundColor: "rgba(255,255,255,0.8)",
+    backgroundColor: "rgba(255,255,255,0.6)",
     height: 1,
     width: "calc(100% - 64px)",
   },

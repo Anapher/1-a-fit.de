@@ -11,8 +11,8 @@ import {
 } from "@material-ui/core";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import React, { useRef, useState } from "react";
-import { container } from "../../style/shared";
+import React from "react";
+import { container, fixedFullWidthGrid } from "../../style/shared";
 
 type FitnessOffer = {
   desc: string;
@@ -75,9 +75,8 @@ const getFitnessOffers: (images: ImageInfo[], data: any) => FitnessOffer[] = (
 ];
 
 const useStyles = makeStyles(theme => ({
-  container: {
-    ...container,
-  },
+  container,
+  fixedFullWidthGrid,
   roundedImage: {
     borderRadius: 24,
     boxShadow: theme.shadows[11],
@@ -171,12 +170,7 @@ export default function FitnessInfo() {
 
   return (
     <div className={classes.container} id="studio">
-      {/* <Carousel
-        images={edges.map(x => ({
-          fluid: x.node.childImageSharp.fluid,
-        }))}
-      /> */}
-      <Grid container spacing={6} style={{ margin: 0, width: "100%" }}>
+      <Grid container spacing={6} className={classes.fixedFullWidthGrid}>
         <Grid item sm={4} xs={12}>
           <Img
             fluid={fitness.childImageSharp.fluid}
@@ -220,7 +214,7 @@ export default function FitnessInfo() {
         <Typography variant="h4" align="center" gutterBottom>
           Was wir bieten
         </Typography>
-        <Grid container spacing={4}>
+        <Grid container spacing={4} className={classes.fixedFullWidthGrid}>
           {offers.map(x => (
             <Grid key={x.desc} item md={4} sm={6} xs={12}>
               <Card
