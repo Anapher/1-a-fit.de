@@ -1,25 +1,18 @@
-import React, { useRef, useState } from "react";
 import {
-  Grid,
-  Typography,
-  makeStyles,
-  Card,
   Box,
   Button,
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogContentText,
-  CardMedia,
-  CardContent,
+  Card,
   CardActions,
+  CardContent,
+  CardMedia,
+  Grid,
+  makeStyles,
+  Typography,
 } from "@material-ui/core";
-import { container } from "../../style/shared";
+import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import { useStaticQuery, graphql } from "gatsby";
-import Carousel from "../../components/Carousel";
-import eGym_Krafttraining_fuer_jedermann from "../../assets/eGym_Krafttraining_fuer_jedermann.mp4";
-import HoverVideoPlayer from "../../components/HoverVideoPlayer";
+import React, { useRef, useState } from "react";
+import { container } from "../../style/shared";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -131,70 +124,53 @@ export default function FitnessInfo() {
     }
   `);
 
-  const signUp = () => {
-    downloadElement.current!.click();
-    setSignUpDialogOpen(true);
-  };
-
-  const closeSignUpDialog = () => setSignUpDialogOpen(false);
-
   return (
     <div className={classes.container} id="studio">
-      <Carousel
+      {/* <Carousel
         images={edges.map(x => ({
           fluid: x.node.childImageSharp.fluid,
         }))}
-      />
-      <Grid
-        container
-        style={{
-          marginTop: 64,
-          marginBottom: 64,
-          marginLeft: 0,
-          marginRight: 0,
-          width: "100%",
-        }}
-        spacing={4}
-      >
-        <Grid item xs={12}>
+      /> */}
+      <Grid container spacing={6} style={{ margin: 0, width: "100%" }}>
+        <Grid item sm={4} xs={12}>
+          <Img
+            fluid={fitness.childImageSharp.fluid}
+            className={classes.roundedImage}
+          />
           <Box display="flex" justifyContent="center">
-            <Box display="flex" alignItems="center">
-              <Typography variant="h5" align="center">
-                Entdecke die nächste Generation Fitnessgeräte von
-                <Img
-                  fixed={egym.childImageSharp.fixed}
-                  style={{ marginLeft: 12 }}
-                />
-              </Typography>
-            </Box>
+            <Typography variant="h6">Fitness</Typography>
           </Box>
         </Grid>
-        <Grid item xs={12} md={4}>
+        <Grid item sm={4} xs={12}>
           <Img
-            fluid={egymApp.childImageSharp.fluid}
-            style={{ width: "100%", height: 320 }}
+            fluid={lifestyle.childImageSharp.fluid}
+            className={classes.roundedImage}
           />
+          <Box display="flex" justifyContent="center">
+            <Typography variant="h6">Lifestyle</Typography>
+          </Box>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Typography>
-            Der egym Zirkel in deinem 1a fit ermöglicht es dir, mit innovativer
-            Software schnell deine Trainingsziele zu erreichen. Mit
-            Unterstützung von Deinem Trainer kannst Du über einen Bildschirm
-            Dein individuelles Trainingsprogramm wählen. Abnehmen,
-            Figurtraining, Verbesserung der allgemeinen Fitness, Muskelaufbau
-            oder Reha Training – das Training am eGym-Zirkel lässt keine Wünsche
-            oder Ziele offen. Das lästige Einstellen der Sitzposition und des
-            Trainingsgewichts findet mit eGym auch endlich ein Ende, weil alles
-            elektronisch und automatisch erfolgt.
-          </Typography>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <HoverVideoPlayer
-            src={eGym_Krafttraining_fuer_jedermann}
-            style={{ height: 320 }}
+        <Grid item sm={4} xs={12}>
+          <Img
+            fluid={health.childImageSharp.fluid}
+            className={classes.roundedImage}
           />
+          <Box display="flex" justifyContent="center">
+            <Typography variant="h6">Gesundheit</Typography>
+          </Box>
         </Grid>
       </Grid>
+      <Box display="flex" justifyContent="center" mt={4}>
+        <Button
+          variant="outlined"
+          color="secondary"
+          href={contract.publicURL}
+          className={classes.membershipButton}
+          target="_blank"
+        >
+          Jetzt Mitglied werden
+        </Button>
+      </Box>
       <>
         <Typography variant="h4" align="center" gutterBottom>
           Was wir bieten
@@ -292,67 +268,6 @@ export default function FitnessInfo() {
           </Grid>
         </Grid>
       </>
-      <Grid container spacing={6} style={{ margin: 0, width: "100%" }}>
-        <Grid item sm={4} xs={12}>
-          <Img
-            fluid={fitness.childImageSharp.fluid}
-            className={classes.roundedImage}
-          />
-          <Box display="flex" justifyContent="center">
-            <Typography variant="h6">Fitness</Typography>
-          </Box>
-        </Grid>
-        <Grid item sm={4} xs={12}>
-          <Img
-            fluid={lifestyle.childImageSharp.fluid}
-            className={classes.roundedImage}
-          />
-          <Box display="flex" justifyContent="center">
-            <Typography variant="h6">Lifestyle</Typography>
-          </Box>
-        </Grid>
-        <Grid item sm={4} xs={12}>
-          <Img
-            fluid={health.childImageSharp.fluid}
-            className={classes.roundedImage}
-          />
-          <Box display="flex" justifyContent="center">
-            <Typography variant="h6">Gesundheit</Typography>
-          </Box>
-        </Grid>
-      </Grid>
-      <Box display="flex" justifyContent="center" mt={8}>
-        <Button
-          variant="outlined"
-          color="secondary"
-          onClick={signUp}
-          className={classes.membershipButton}
-        >
-          Jetzt Mitglied werden
-        </Button>
-        <a
-          ref={downloadElement}
-          download="Mitgliedsvertrag.pdf"
-          href={contract.publicURL}
-          style={{ display: "none" }}
-        />
-      </Box>
-      <Dialog
-        open={signUpDialogOpen}
-        onClose={closeSignUpDialog}
-        aria-labelledby="dialog-title"
-        aria-describedby="dialog-description"
-      >
-        <DialogTitle id="dialog-title">Jetzt Mitglied werden</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="dialog-description">
-            Soeben wurde der Mitgliedsvertrag in Ihrem Browser heruntergeladen.
-            Bitte drucken Sie diesen aus, geben Sie Ihre Daten an und bringen
-            Sie ihn anschließend bei einem unserer Fitness Studios vorbei. Wir
-            freuen uns auf Sie!
-          </DialogContentText>
-        </DialogContent>
-      </Dialog>
     </div>
   );
 }

@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import { AppBar, Toolbar, Button, makeStyles } from "@material-ui/core";
-import { container } from "../style/shared";
+import { AppBar, Button, makeStyles, Toolbar } from "@material-ui/core";
 import classNames from "classnames";
-import { useStaticQuery, graphql, Link } from "gatsby";
-import LogoIcon from "../assets/logo.svg";
-import { AnchorLink } from "gatsby-plugin-anchor-links";
-import to from "../utils/to";
+import { Link } from "gatsby";
+import React, { useEffect, useState } from "react";
 import Scrollspy from "react-scrollspy";
+import LogoIcon from "../assets/logo.svg";
+import { container } from "../style/shared";
+import to from "../utils/to";
 
 const useStyles = makeStyles(theme => ({
   appbar: {

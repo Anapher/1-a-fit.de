@@ -4,6 +4,7 @@ import React from "react";
 import LogoIcon from "../../assets/logo.svg";
 import Parallax from "../../components/Parallax";
 import { container } from "../../style/shared";
+import classnames from "classnames";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -53,16 +54,59 @@ const useStyles = makeStyles(theme => ({
   infoContainer: {
     display: "flex",
     flexDirection: "row",
-    marginTop: 80,
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
     },
-    [theme.breakpoints.down("xs")]: {
-      marginTop: 15,
-    },
   },
   appbarPlaceholder: {
-    ...theme.mixins.toolbar,
+    [theme.breakpoints.down("sm")]: {
+      height: 90,
+      width: "100%",
+    },
+  },
+  titleContainer: {
+    zIndex: 12,
+    color: "#FFFFFF",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    backdropFilter: "blur(3px)",
+    paddingTop: 48,
+    paddingBottom: 48,
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      height: "100%",
+    },
+  },
+  centerHorizontal: {
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      display: "flex",
+      justifyContent: "center",
+    },
+    [theme.breakpoints.down("sm")]: {
+      height: "100%",
+    },
+  },
+  horizontalLine: {
+    backgroundColor: "rgba(255,255,255,0.8)",
+    height: 1,
+    width: "calc(100% - 64px)",
+  },
+  upperHr: {
+    marginBottom: 8 /** the info has a default top margin of 32 */,
+    marginTop: 40,
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: -12,
+    },
+  },
+  downHr: {
+    marginTop: 40,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 20,
+    },
   },
 }));
 
@@ -76,7 +120,9 @@ function LandingPage() {
     },
   } = useStaticQuery(graphql`
     query {
-      background: file(relativePath: { eq: "landing-page/background-1a.jpg" }) {
+      background: file(
+        relativePath: { eq: "landing-page/background_1a_hell.jpg" }
+      ) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
@@ -97,17 +143,13 @@ function LandingPage() {
       image={background.childImageSharp.fluid}
       style={{ height: "90vh" }}
     >
-      <div className={classes.container}>
-        <div className={classes.appbarPlaceholder} />
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            flexDirection: "column",
-          }}
-        >
+      <div className={classes.centerHorizontal}>
+        <div className={classes.titleContainer}>
+          <div className={classes.appbarPlaceholder} />
           <LogoIcon className={classes.logo} />
+          <div
+            className={classnames(classes.horizontalLine, classes.upperHr)}
+          />
           <div className={classes.infoContainer}>
             <div className={classes.card}>
               <Typography variant="h5" className={classes.subtitleText}>
@@ -131,6 +173,7 @@ function LandingPage() {
               </Typography>
             </div>
           </div>
+          <div className={classnames(classes.horizontalLine, classes.downHr)} />
         </div>
       </div>
     </Parallax>
