@@ -15,7 +15,6 @@ const useStyles = makeStyles(theme => ({
   container,
   fixedFullWidthGrid,
   roundedButton: {
-    width: "100%",
     borderRadius: 24,
     boxShadow: theme.shadows[11],
     marginBottom: 16,
@@ -23,6 +22,10 @@ const useStyles = makeStyles(theme => ({
       marginLeft: 48,
       marginRight: 48,
     },
+  },
+  gridItemFill: {
+    display: "flex",
+    flexDirection: "column",
   },
   roundedImage: {
     width: "100%",
@@ -83,7 +86,13 @@ export default function FitnessInfo() {
     <div className={classes.container}>
       <Grid container spacing={6} className={classes.fixedFullWidthGrid}>
         {paradigma.map(x => (
-          <Grid item key={x.name} sm={4} xs={12}>
+          <Grid
+            item
+            key={x.name}
+            sm={4}
+            xs={12}
+            className={classes.gridItemFill}
+          >
             <ButtonBase className={classes.roundedButton}>
               <Img fluid={x.img} className={classes.roundedImage} />
             </ButtonBase>

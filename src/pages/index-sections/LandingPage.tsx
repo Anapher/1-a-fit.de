@@ -1,10 +1,17 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import {
+  makeStyles,
+  Typography,
+  Box,
+  useMediaQuery,
+  useTheme,
+} from "@material-ui/core";
+import classnames from "classnames";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
 import LogoIcon from "../../assets/logo.svg";
 import Parallax from "../../components/Parallax";
 import { container } from "../../style/shared";
-import classnames from "classnames";
+import Socials from "./LandingPageSocials";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -84,7 +91,8 @@ const useStyles = makeStyles(theme => ({
     width: "100%",
     [theme.breakpoints.up("md")]: {
       display: "flex",
-      justifyContent: "center",
+      alignItems: "center",
+      flexDirection: "column",
     },
     [theme.breakpoints.down("sm")]: {
       height: "100%",
@@ -137,6 +145,9 @@ function LandingPage() {
     }
   `);
 
+  const theme = useTheme();
+  const fullScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Parallax
       filter
@@ -174,7 +185,17 @@ function LandingPage() {
             </div>
           </div>
           <div className={classnames(classes.horizontalLine, classes.downHr)} />
+          {fullScreen && (
+            <Box mt={2}>
+              <Socials dense />
+            </Box>
+          )}
         </div>
+        {!fullScreen && (
+          <Box mt={4}>
+            <Socials />
+          </Box>
+        )}
       </div>
     </Parallax>
   );
