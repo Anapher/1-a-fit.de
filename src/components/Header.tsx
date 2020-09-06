@@ -4,6 +4,8 @@ import {
   makeStyles,
   Toolbar,
   useScrollTrigger,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 import classNames from "classnames";
 import { Link } from "gatsby";
@@ -43,6 +45,15 @@ const useStyles = makeStyles(theme => ({
       width: 45,
       height: 18.75,
     },
+    [theme.breakpoints.down(330)]: {
+      width: 30,
+      height: 12.5,
+    },
+  },
+  menuList: {
+    [theme.breakpoints.down(330)]: {
+      paddingLeft: 0,
+    },
   },
 }));
 
@@ -58,8 +69,11 @@ export default function Header({
   transparentUntil,
 }: Props) {
   const classes = useStyles();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
+
   const trigger = useScrollTrigger({
-    threshold: transparentUntil,
+    threshold: isMobile ? 45 : transparentUntil,
     disableHysteresis: true,
   });
 
@@ -82,6 +96,7 @@ export default function Header({
         <Scrollspy
           items={["studio", "kurse", "anfahrt"]}
           currentClassName={classes.activeSection}
+          className={classes.menuList}
         >
           <Button color="inherit" {...to("/#studio")}>
             Studio

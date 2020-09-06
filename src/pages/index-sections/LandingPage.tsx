@@ -20,11 +20,6 @@ const useStyles = makeStyles(theme => ({
     color: "#FFFFFF",
     paddingLeft: 32,
   },
-  titleText: {
-    [theme.breakpoints.down("sm")]: {
-      fontSize: 55,
-    },
-  },
   logo: {
     width: 200,
     height: 84,
@@ -41,6 +36,9 @@ const useStyles = makeStyles(theme => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: 25,
     },
+    [theme.breakpoints.down(330)]: {
+      fontSize: 22,
+    },
   },
   priceTagText: {
     [theme.breakpoints.down("sm")]: {
@@ -51,6 +49,9 @@ const useStyles = makeStyles(theme => ({
   openingTimesText: {
     [theme.breakpoints.down("sm")]: {
       fontSize: 20,
+    },
+    [theme.breakpoints.down(330)]: {
+      fontSize: 16,
     },
   },
   card: {

@@ -55,7 +55,7 @@ export default function LandingPageSocials({ dense }: Props) {
     <Typography className={classes.text}>
       {!dense && "Folge uns jetzt auf"}
       <Button
-        variant="outlined"
+        variant={dense ? "text" : "outlined"}
         className={classes.socialButton}
         style={{ marginLeft: !dense && 8, marginRight: 16 }}
         href={socials.instagram}
@@ -66,7 +66,7 @@ export default function LandingPageSocials({ dense }: Props) {
         Instagram
       </Button>
       <Button
-        variant="outlined"
+        variant={dense ? "text" : "outlined"}
         className={classes.socialButton}
         href={socials.facebook}
       >
