@@ -2,7 +2,7 @@ module.exports = {
   pathPrefix: "/1-a-fit.de",
   siteMetadata: {
     title: `1-a-fit`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Fitness und Gesundheit in den Clubs Kassel Nord / Vellmar und Kassel Ost. Fitness-Studio.`,
     author: `@gatsbyjs`,
     copyright: " 1-a-fit Betriebs GmbH",
     courses: [
