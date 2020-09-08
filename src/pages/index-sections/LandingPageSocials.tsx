@@ -3,7 +3,6 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import classnames from "classnames";
 
 const useStyles = makeStyles({
   text: {
