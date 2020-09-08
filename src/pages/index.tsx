@@ -24,7 +24,7 @@ const IndexPage = () => {
   const classes = useStyles();
   return (
     <Layout overlayContent transparentUntil={300}>
-      <SEO title="Home" />
+      <SEO />
       <LandingPage />
       <div className={classes.content}>
         <div id="studio">
