@@ -6,6 +6,10 @@ import {
   useScrollTrigger,
   useMediaQuery,
   useTheme,
+  Select,
+  MenuItem,
+  FormControl,
+  InputLabel,
 } from "@material-ui/core";
 import classNames from "classnames";
 import { Link } from "gatsby";
@@ -14,6 +18,7 @@ import Scrollspy from "react-scrollspy";
 import LogoIcon from "../assets/logo.svg";
 import { container } from "../style/shared";
 import to from "../utils/to";
+import NavButton from "./NavButton";
 
 const useStyles = makeStyles(theme => ({
   appbar: {
@@ -51,8 +56,21 @@ const useStyles = makeStyles(theme => ({
     },
   },
   menuList: {
+    marginTop: 0,
+    marginBottom: 0,
     [theme.breakpoints.down(330)]: {
       paddingLeft: 0,
+    },
+  },
+  navLink: {
+    minWidth: 96,
+    padding: "0.9375rem",
+    fontWeight: 400,
+    fontSize: 13.5,
+    textTransform: "uppercase",
+    "&:hover,&:focus": {
+      color: "inherit",
+      background: "rgba(200, 200, 200, 0.2)",
     },
   },
 }));
@@ -93,25 +111,15 @@ export default function Header({
           <LogoIcon className={classes.logo} />
         </Link>
         <div style={{ flex: 1 }} />
-        <Scrollspy
-          items={["studio", "kurse", "anfahrt"]}
-          currentClassName={classes.activeSection}
-          className={classes.menuList}
-        >
-          <Button color="inherit" {...to("/#studio")}>
-            Studio
-          </Button>
-          <Button
-            color="inherit"
-            style={{ marginLeft: 16, marginRight: 16 }}
-            {...to("/#kurse")}
-          >
-            Kurse
-          </Button>
-          <Button color="inherit" {...to("/#anfahrt")}>
-            Anfahrt
-          </Button>
-        </Scrollspy>
+        <NavButton {...to("/#anfahrt")} className={classes.navLink}>
+          Vellmar
+        </NavButton>
+        <NavButton {...to("/#anfahrt")} className={classes.navLink}>
+          Kassel
+        </NavButton>
+        <NavButton {...to("/#kurse")} className={classes.navLink}>
+          Kurse
+        </NavButton>
       </Toolbar>
     </AppBar>
   );
