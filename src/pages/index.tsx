@@ -7,6 +7,7 @@ import FitnessInfo from "./index-sections/FitnessInfo";
 import LandingPage from "./index-sections/LandingPage";
 import Map from "./index-sections/Map";
 import WhatWeOffer from "./index-sections/WhatWeOffer";
+import Affilinet from "./index-sections/Affilinet";
 
 const useStyles = makeStyles(theme => ({
   content: {
@@ -33,10 +34,12 @@ const IndexPage = () => {
             <WhatWeOffer />
           </Box>
         </div>
-        <Box mt={16}>
+        <Box mt={8}>
           <Courses />
         </Box>
-        <Map />
+        <Box mt={4} mb={4}>
+          <Affilinet />
+        </Box>
       </div>
     </Layout>
   );

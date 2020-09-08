@@ -1,19 +1,14 @@
 import {
   AppBar,
-  Button,
   makeStyles,
   Toolbar,
-  useScrollTrigger,
   useMediaQuery,
+  useScrollTrigger,
   useTheme,
-  Select,
-  MenuItem,
-  FormControl,
-  InputLabel,
 } from "@material-ui/core";
 import classNames from "classnames";
 import { Link } from "gatsby";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Scrollspy from "react-scrollspy";
 import LogoIcon from "../assets/logo.svg";
 import { container } from "../style/shared";
@@ -111,15 +106,21 @@ export default function Header({
           <LogoIcon className={classes.logo} />
         </Link>
         <div style={{ flex: 1 }} />
-        <NavButton {...to("/#anfahrt")} className={classes.navLink}>
-          Vellmar
-        </NavButton>
-        <NavButton {...to("/#anfahrt")} className={classes.navLink}>
-          Kassel
-        </NavButton>
-        <NavButton {...to("/#kurse")} className={classes.navLink}>
-          Kurse
-        </NavButton>
+        <Scrollspy
+          items={["vellmar", "kassel", "kurse"]}
+          currentClassName={classes.activeSection}
+          style={{ marginTop: 0, marginBottom: 0, paddingLeft: 0 }}
+        >
+          <NavButton {...to("/location/vellmar")} className={classes.navLink}>
+            Vellmar
+          </NavButton>
+          <NavButton {...to("/location/kassel")} className={classes.navLink}>
+            Kassel
+          </NavButton>
+          <NavButton {...to("/#kurse")} className={classes.navLink}>
+            Kurse
+          </NavButton>
+        </Scrollspy>
       </Toolbar>
     </AppBar>
   );

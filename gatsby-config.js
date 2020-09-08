@@ -43,6 +43,12 @@ module.exports = {
         info: "Leipziger Str. 149, 34123 Kassel\nTel: 0561 820 828 58",
       },
     },
+    affilinet: {
+      bodyattackImg:
+        "https://www.awin1.com/cshow.php?s=2420465&v=14328&q=366583&r=764785",
+      bodyattackUrl:
+        "https://www.awin1.com/cread.php?s=2420465&v=14328&q=366583&r=764785",
+    },
     socials: {
       facebook:
         "https://de-de.facebook.com/1a-fit-Fitness-Lifestyle-Gesundheit-145923872285252/",
