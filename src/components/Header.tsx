@@ -67,6 +67,9 @@ const useStyles = makeStyles(theme => ({
       color: "inherit",
       background: "rgba(200, 200, 200, 0.2)",
     },
+    [theme.breakpoints.down("xs")]: {
+      minWidth: 0,
+    },
   },
 }));
 
