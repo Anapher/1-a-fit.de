@@ -5,11 +5,18 @@ import {
   Grid,
   makeStyles,
   Typography,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from "@material-ui/core";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
-import React from "react";
+import React, { useState } from "react";
 import { container, fixedFullWidthGrid } from "../../style/shared";
+import _ from "lodash";
+import InfoDialog from "../../components/InfoDialog";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 const useStyles = makeStyles(theme => ({
   container,
@@ -46,26 +53,26 @@ const useStyles = makeStyles(theme => ({
 export default function FitnessInfo() {
   const classes = useStyles();
 
-  const { fitness, lifestyle, health, contract } = useStaticQuery(graphql`
+  const {
+    allMdx: { edges },
+    contract,
+  } = useStaticQuery(graphql`
     query {
-      fitness: file(relativePath: { eq: "overview/fitness.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      lifestyle: file(relativePath: { eq: "overview/lifestyle.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      health: file(relativePath: { eq: "overview/health.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 400) {
-            ...GatsbyImageSharpFluid
+      allMdx(filter: { fileAbsolutePath: { regex: "/fitnessinfo/" } }) {
+        edges {
+          node {
+            frontmatter {
+              image {
+                childImageSharp {
+                  fluid(quality: 90, maxWidth: 500) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+              title
+              orderNumber
+            }
+            body
           }
         }
       }
@@ -76,32 +83,69 @@ export default function FitnessInfo() {
     }
   `);
 
-  const paradigma = [
-    { name: "Fitness", img: fitness.childImageSharp.fluid },
-    { name: "Lifestyle", img: lifestyle.childImageSharp.fluid },
-    { name: "Gesundheit", img: health.childImageSharp.fluid },
-  ];
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogChild, setDialogChild] = useState(null);
+
+  const handleCloseDialog = () => setDialogOpen(false);
+
+  const descriptionElementRef = React.useRef<HTMLElement>(null);
+  React.useEffect(() => {
+    if (dialogOpen) {
+      const { current: descriptionElement } = descriptionElementRef;
+      if (descriptionElement !== null) {
+        descriptionElement.focus();
+      }
+    }
+  }, [dialogOpen]);
 
   return (
     <div className={classes.container}>
       <Grid container spacing={6} className={classes.fixedFullWidthGrid}>
-        {paradigma.map(x => (
-          <Grid
-            item
-            key={x.name}
-            sm={4}
-            xs={12}
-            className={classes.gridItemFill}
-          >
-            <ButtonBase className={classes.roundedButton}>
-              <Img fluid={x.img} className={classes.roundedImage} />
-            </ButtonBase>
-            <Box display="flex" justifyContent="center">
-              <Typography variant="h6">{x.name}</Typography>
-            </Box>
-          </Grid>
-        ))}
+        {_.orderBy(edges, x => x.node.frontmatter.orderNumber).map(
+          ({ node }) => (
+            <Grid
+              item
+              key={node.frontmatter.orderNumber}
+              sm={4}
+              xs={12}
+              className={classes.gridItemFill}
+            >
+              <ButtonBase
+                className={classes.roundedButton}
+                onClick={() => {
+                  setDialogOpen(true);
+                  setDialogChild(node);
+                }}
+              >
+                <Img
+                  fluid={node.frontmatter.image.childImageSharp.fluid}
+                  className={classes.roundedImage}
+                />
+              </ButtonBase>
+              <Box display="flex" justifyContent="center">
+                <Typography variant="h6">{node.frontmatter.title}</Typography>
+              </Box>
+            </Grid>
+          )
+        )}
       </Grid>
+      <InfoDialog open={dialogOpen} onClose={handleCloseDialog}>
+        {dialogChild && (
+          <>
+            <DialogTitle>{dialogChild.frontmatter.title}</DialogTitle>
+            <DialogContent>
+              <DialogContentText tabIndex={-1} ref={descriptionElementRef}>
+                {dialogChild && <MDXRenderer>{dialogChild.body}</MDXRenderer>}
+              </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleCloseDialog} color="primary">
+                Schließen
+              </Button>
+            </DialogActions>
+          </>
+        )}
+      </InfoDialog>
       <Box display="flex" justifyContent="center" mt={4}>
         <Button
           variant="outlined"
