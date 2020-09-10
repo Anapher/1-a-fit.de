@@ -1,0 +1,10 @@
+---
+title: "Kaffee"
+image: "./images/coffee.jpg"
+orderNumber: 7
+---
+
+Lange Zeit galt Kaffee im Zusammenhang mit einer gesunden Ernährungsweise nicht als Getränk sondern mehr als
+Genussmittel. Morgens weckt er die Lebensgeister, mittags verbannt er das Esskoma, nachmittags trägt er zu einem
+gelungenen Café-Genuss bei. Aber auch Cappuccino, Milchkaffee, Espresso, Latte Macciato, Kakao und andere
+Kaffeespezialitäten findest du im 1afit.

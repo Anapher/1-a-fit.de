@@ -20,6 +20,7 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sass": "^2.3.12",
     "gatsby-plugin-sharp": "^2.6.27",
+    "gatsby-remark-default-html-attrs": "^1.0.1",
     "gatsby-source-filesystem": "^2.3.24",
     "gatsby-transformer-remark": "^2.8.30",
     "gatsby-transformer-sharp": "^2.5.13",

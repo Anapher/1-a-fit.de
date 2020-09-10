@@ -1,0 +1,10 @@
+---
+title: "Getränkeabo"
+image: "./images/outdoor.jpg"
+orderNumber: 6
+---
+
+Da es beim Training wichtig ist, ausreichend mit Flüssigkeit versorgt zu werden, haben wir im 1afit ein
+Getränkeabo, in dem es erfrischendes Wasser sowie eine Auswahl an Sportgetränken ohne Zucker mit Vitaminen,
+Mineralien und L-Carnitin in verschiedenen Geschmacksrichtungen gibt. Einfach und schnell Getränke zapfen.
+Immer frisch, immer lecker, immer gesund.
