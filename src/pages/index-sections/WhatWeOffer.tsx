@@ -18,6 +18,7 @@ import React, { useState } from "react";
 import { container, fixedFullWidthGrid } from "../../style/shared";
 import _ from "lodash";
 import InfoDialog from "../../components/InfoDialog";
+import { MDXRenderer } from "gatsby-plugin-mdx";
 
 type FitnessOffer = {
   desc: string;
@@ -39,10 +40,10 @@ export default function WhatWeOffer() {
   const classes = useStyles();
 
   const {
-    allMarkdownRemark: { edges },
+    allMdx: { edges },
   } = useStaticQuery(graphql`
     query {
-      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/offers/" } }) {
+      allMdx(filter: { fileAbsolutePath: { regex: "/offers/" } }) {
         edges {
           node {
             frontmatter {
@@ -56,7 +57,7 @@ export default function WhatWeOffer() {
               title
               orderNumber
             }
-            html
+            body
           }
         }
       }
@@ -85,7 +86,7 @@ export default function WhatWeOffer() {
       </Typography>
       <Grid container spacing={4} className={classes.fixedFullWidthGrid}>
         {_.orderBy(edges, x => x.node.frontmatter.orderNumber).map(
-          ({ node: { frontmatter, html } }) => (
+          ({ node: { frontmatter, body } }) => (
             <Grid key={frontmatter.orderNumber} item md={4} sm={6} xs={12}>
               <Card
                 style={{
@@ -110,7 +111,7 @@ export default function WhatWeOffer() {
                     size="small"
                     color="primary"
                     onClick={() => {
-                      setDialogChild({ frontmatter, html });
+                      setDialogChild({ frontmatter, body });
                       setDialogOpen(true);
                     }}
                   >
@@ -128,7 +129,7 @@ export default function WhatWeOffer() {
             <DialogTitle>{dialogChild.frontmatter.title}</DialogTitle>
             <DialogContent>
               <DialogContentText tabIndex={-1} ref={descriptionElementRef}>
-                <div dangerouslySetInnerHTML={{ __html: dialogChild.html }} />
+                {dialogChild && <MDXRenderer>{dialogChild.body}</MDXRenderer>}
               </DialogContentText>
             </DialogContent>
             <DialogActions>

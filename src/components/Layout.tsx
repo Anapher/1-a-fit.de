@@ -1,8 +1,14 @@
 import React from "react";
-import { CssBaseline, makeStyles, ThemeProvider } from "@material-ui/core";
+import {
+  CssBaseline,
+  makeStyles,
+  ThemeProvider,
+  Typography,
+} from "@material-ui/core";
 import Header from "./Header";
 import Footer, { FOOTER_HEIGHT_PX } from "./Footer";
 import theme from "../style/theme";
+import { MDXProvider } from "@mdx-js/react";
 
 type Props = {
   children?: React.ReactNode;
@@ -29,19 +35,25 @@ export default function Layout({
 
   return (
     <ThemeProvider theme={theme}>
-      <div>
-        <CssBaseline />
-        <Header
-          transparent={!!transparentUntil}
-          fixed
-          transparentUntil={transparentUntil}
-        />
-        <div className={classes.content}>
-          {!overlayContent && <div className={classes.appbarPlaceholder} />}
-          {children}
+      <MDXProvider
+        components={{
+          p: props => <Typography {...props} variant="body1" />,
+        }}
+      >
+        <div>
+          <CssBaseline />
+          <Header
+            transparent={!!transparentUntil}
+            fixed
+            transparentUntil={transparentUntil}
+          />
+          <div className={classes.content}>
+            {!overlayContent && <div className={classes.appbarPlaceholder} />}
+            {children}
+          </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </MDXProvider>
     </ThemeProvider>
   );
 }

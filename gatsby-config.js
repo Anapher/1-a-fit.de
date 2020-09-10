@@ -114,23 +114,19 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        gatsbyRemarkPlugins: [
           {
-            resolve: `gatsby-remark-default-html-attrs`,
+            resolve: `gatsby-remark-images`,
             options: {
-              a: {
-                style: "color: #2980b9; text-decoration: none;",
-              },
-              p: {
-                style: "margin-block-end: 0; margin-block-start: 0;",
-              },
+              maxWidth: 800,
             },
           },
         ],
       },
     },
+    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
