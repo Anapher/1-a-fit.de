@@ -14,7 +14,7 @@ Dieses Impressum gilt auch für die Facebookseite: www.facebook.com/pages/1a-fit
 
 Der gesamte Internet-Auftritt ist urheberrechtlich geschützt. Texte, Grafiken oder Bilder dürfen ohne schriftliche Genehmigung keinesfalls weiterverwendet werden. Mit Urteil vom 12. Mai 1998 - 312 O 85/98 - "Haftung für Links" hat das Landgericht (LG) Hamburg entschieden, dass durch die Erstellung eines Links, die Inhalte der gelinkten Seite ggf. mit zu verantworten sind. Dies kann (so das Gericht) nur dadurch verhindert werden, indem man sich ausdrücklich von diesen Inhalten distanziert. Da wir keinerlei Einfluss auf die Gestaltung und die Inhalte der extern gelinkten Seiten haben, distanzieren wir uns ausdrücklich von den Inhalten aller extern gelinkten Seiten auf diesem Server und machen uns die Inhalte der gelinkten Seiten nicht zu eigen. Diese Erklärung gilt für alle verfügbaren Links auf diesem Server sowie evtl. vorhandene Linklisten und Foren, die zur Zeit aktiv sind und/oder aktiv werden.
 
-Unsere Datenschutzerklärung finden Sie [hier](https://1-a-fit.de/Datenschutz.htm)
+Unsere Datenschutzerklärung finden Sie [hier](/datenschutz)
 
 Disclaimer
 
