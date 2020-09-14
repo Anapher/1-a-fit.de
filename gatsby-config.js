@@ -1,10 +1,10 @@
 module.exports = {
   pathPrefix: "/1-a-fit.de",
   siteMetadata: {
-    title: `1-a-fit`,
+    title: `1a fit`,
     description: `Fitness und Gesundheit in den Clubs Kassel Nord / Vellmar und Kassel Ost. Fitness-Studio.`,
     author: `@gatsbyjs`,
-    copyright: " 1-a-fit Betriebs GmbH",
+    copyright: " 1a fit Betriebs GmbH",
     courses: [
       [null, null, "Bauch-Fit", null, null],
       [

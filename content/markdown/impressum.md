@@ -2,7 +2,7 @@
 title: "Impressum"
 ---
 
-1-a-fit Betriebs GmbH<br/>
+1a fit Betriebs GmbH<br/>
 Geschäftsführer: Stefan Heiland<br/>
 Brüder-Grimm-Str. 26<br/>
 34246 Vellmar<br/>
