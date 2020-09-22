@@ -45,7 +45,7 @@ module.exports = {
     },
     affilinet: {
       bodyattackImg:
-        "https://www.awin1.com/cshow.php?s=2420465&v=14328&q=366583&r=764785",
+        "https://www.awin1.com/cshow.php?s=2420459&v=14328&q=366583&r=764785",
       bodyattackUrl:
         "https://www.awin1.com/cread.php?s=2420465&v=14328&q=366583&r=764785",
     },

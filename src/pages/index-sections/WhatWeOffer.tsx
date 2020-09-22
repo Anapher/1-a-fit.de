@@ -41,6 +41,11 @@ export default function WhatWeOffer() {
 
   const {
     allMdx: { edges },
+    site: {
+      siteMetadata: {
+        affilinet: { bodyattackImg, bodyattackUrl },
+      },
+    },
   } = useStaticQuery(graphql`
     query {
       allMdx(filter: { fileAbsolutePath: { regex: "/offers/" } }) {
@@ -58,6 +63,14 @@ export default function WhatWeOffer() {
               orderNumber
             }
             body
+          }
+        }
+      }
+      site {
+        siteMetadata {
+          affilinet {
+            bodyattackImg
+            bodyattackUrl
           }
         }
       }
@@ -82,7 +95,7 @@ export default function WhatWeOffer() {
   return (
     <div className={classes.container}>
       <Typography variant="h4" align="center" gutterBottom>
-        Was wir bieten
+        Das 1a fit Angebot
       </Typography>
       <Grid container spacing={4} className={classes.fixedFullWidthGrid}>
         {_.orderBy(edges, x => x.node.frontmatter.orderNumber).map(
@@ -122,6 +135,31 @@ export default function WhatWeOffer() {
             </Grid>
           )
         )}
+        <Grid item md={4} sm={6} xs={12}>
+          <Card
+            style={{
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
+            <CardMedia
+              style={{ height: 250 }}
+              image={bodyattackImg}
+              title="Bodyattack"
+            />
+            <CardContent style={{ flex: 1 }}>
+              <Typography gutterBottom variant="h6" component="h2">
+                Bodyattack
+              </Typography>
+            </CardContent>
+            <CardActions>
+              <Button size="small" color="primary" href={bodyattackUrl}>
+                Bei Bodyattack einkaufen
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid>
       </Grid>
       <InfoDialog open={dialogOpen} onClose={handleCloseDialog}>
         {dialogChild && (

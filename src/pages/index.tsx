@@ -37,9 +37,6 @@ const IndexPage = () => {
         <Box mt={8}>
           <Courses />
         </Box>
-        <Box mt={4} mb={4}>
-          <Affilinet />
-        </Box>
       </div>
     </Layout>
   );
