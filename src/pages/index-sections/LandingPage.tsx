@@ -8,9 +8,9 @@ import {
 import classnames from "classnames";
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import LogoIcon from "../../assets/logo.svg";
+import LogoIcon from "../../assets/logo_full_white.svg";
 import Parallax from "../../components/Parallax";
-import { container } from "../../style/shared";
+import { container, logoProportion } from "../../style/shared";
 import Socials from "./LandingPageSocials";
 
 const useStyles = makeStyles(theme => ({
@@ -21,15 +21,15 @@ const useStyles = makeStyles(theme => ({
     paddingLeft: 32,
   },
   logo: {
-    width: 200,
-    height: 84,
+    width: 250,
+    height: 250 * logoProportion,
     [theme.breakpoints.down("sm")]: {
-      width: 150,
-      height: 63,
+      width: 200,
+      height: 200 * logoProportion,
     },
     [theme.breakpoints.down("xs")]: {
-      width: 120,
-      height: 50,
+      width: 150,
+      height: 150 * logoProportion,
     },
   },
   subtitleText: {
@@ -106,7 +106,7 @@ const useStyles = makeStyles(theme => ({
   },
   upperHr: {
     marginBottom: 8 /** the info has a default top margin of 32 */,
-    marginTop: 40,
+    marginTop: 20,
     [theme.breakpoints.down("sm")]: {
       marginBottom: -12,
     },

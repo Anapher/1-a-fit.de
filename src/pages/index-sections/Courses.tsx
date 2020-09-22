@@ -9,11 +9,13 @@ import {
   Typography,
   ThemeProvider,
   createMuiTheme,
+  Box,
 } from "@material-ui/core";
-import { container } from "../../style/shared";
+import { container, logoProportion } from "../../style/shared";
 import { graphql, useStaticQuery } from "gatsby";
 import { sectionHeaderText } from "../../style/theme-shared";
 import BackgroundImage from "gatsby-background-image";
+import LogoIcon from "../../assets/logo_full_white.svg";
 
 const darkTheme = createMuiTheme({
   palette: {
@@ -88,15 +90,29 @@ export default function Courses() {
         }}
       >
         <div className={classes.container} id="kurse">
-          <Typography
-            variant="h3"
-            className={classes.sectionHeaderText}
-            color="textPrimary"
-            gutterBottom
+          <Box
+            display="flex"
+            flexDirection="row"
+            justifyContent="space-between"
+            alignItems="flex-start"
           >
-            Kurse
-          </Typography>
-          <div style={{ overflowX: "auto" }}>
+            <Typography
+              variant="h3"
+              className={classes.sectionHeaderText}
+              color="textPrimary"
+              gutterBottom
+            >
+              Kurse
+            </Typography>
+            <LogoIcon
+              style={{
+                width: 80,
+                height: 80 * logoProportion,
+                display: "block",
+              }}
+            />
+          </Box>
+          <div style={{ overflowX: "auto", marginTop: 16 }}>
             <Table className={classes.table}>
               <TableHead>
                 <TableRow>

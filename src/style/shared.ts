@@ -30,4 +30,6 @@ const fixedFullWidthGrid: CreateCSSProperties<{}> = {
   width: "100%",
 };
 
-export { containerFluid, container, fixedFullWidthGrid };
+const logoProportion = 0.685;
+
+export { containerFluid, container, fixedFullWidthGrid, logoProportion };

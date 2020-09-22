@@ -5,9 +5,7 @@ import SEO from "../components/seo";
 import Courses from "./index-sections/Courses";
 import FitnessInfo from "./index-sections/FitnessInfo";
 import LandingPage from "./index-sections/LandingPage";
-import Map from "./index-sections/Map";
 import WhatWeOffer from "./index-sections/WhatWeOffer";
-import Affilinet from "./index-sections/Affilinet";
 
 const useStyles = makeStyles(theme => ({
   content: {

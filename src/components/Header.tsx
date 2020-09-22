@@ -10,8 +10,9 @@ import classNames from "classnames";
 import { Link } from "gatsby";
 import React from "react";
 import Scrollspy from "react-scrollspy";
-import LogoIcon from "../assets/logo.svg";
-import { container } from "../style/shared";
+import LogoIcon from "../assets/logo_full.svg";
+import LogoIconWhite from "../assets/logo_full_white.svg";
+import { container, logoProportion } from "../style/shared";
 import to from "../utils/to";
 import NavButton from "./NavButton";
 
@@ -40,14 +41,15 @@ const useStyles = makeStyles(theme => ({
   },
   logo: {
     width: 60,
-    height: 25,
+    height: 60 * logoProportion,
+    display: "block",
     [theme.breakpoints.down("xs")]: {
       width: 45,
-      height: 18.75,
+      height: 45 * logoProportion,
     },
     [theme.breakpoints.down(330)]: {
       width: 30,
-      height: 12.5,
+      height: 30 * logoProportion,
     },
   },
   menuList: {
@@ -106,7 +108,11 @@ export default function Header({
     >
       <Toolbar className={classes.toolbar}>
         <Link to="/">
-          <LogoIcon className={classes.logo} />
+          {trigger || !transparent ? (
+            <LogoIcon className={classes.logo} />
+          ) : (
+            <LogoIconWhite className={classes.logo} />
+          )}
         </Link>
         <div style={{ flex: 1 }} />
         <Scrollspy
