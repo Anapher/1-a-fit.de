@@ -104,6 +104,8 @@ export default function WhatWeOffer() {
   const isMobile = useMediaQuery(theme.breakpoints.down("xs"));
   const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
+  const cardImageHeight = isMobile ? 130 : 180;
+
   return (
     <div className={classes.container}>
       <Box
@@ -127,10 +129,14 @@ export default function WhatWeOffer() {
           />
         )}
       </Box>
-      <Grid container spacing={4} className={classes.fixedFullWidthGrid}>
+      <Grid
+        container
+        spacing={isMobile ? 2 : 4}
+        className={classes.fixedFullWidthGrid}
+      >
         {_.orderBy(edges, x => x.node.frontmatter.orderNumber).map(
           ({ node: { frontmatter, body } }) => (
-            <Grid key={frontmatter.orderNumber} item md={4} sm={6} xs={12}>
+            <Grid key={frontmatter.orderNumber} item md={3} sm={4} xs={6}>
               <Card
                 style={{
                   height: "100%",
@@ -139,7 +145,7 @@ export default function WhatWeOffer() {
                 }}
               >
                 <CardMedia
-                  style={{ height: 250 }}
+                  style={{ height: cardImageHeight }}
                   component={Img}
                   fluid={frontmatter.image.childImageSharp.fluid}
                   title={frontmatter.title}
@@ -165,7 +171,7 @@ export default function WhatWeOffer() {
             </Grid>
           )
         )}
-        <Grid item md={4} sm={6} xs={12}>
+        <Grid item md={3} sm={4} xs={6}>
           <Card
             style={{
               height: "100%",
@@ -174,7 +180,7 @@ export default function WhatWeOffer() {
             }}
           >
             <CardMedia
-              style={{ height: 250 }}
+              style={{ height: cardImageHeight }}
               image={bodyattackImg}
               title="Bodyattack"
             />
