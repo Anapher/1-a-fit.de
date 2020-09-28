@@ -4,6 +4,7 @@ import Layout from "../components/Layout";
 import SEO from "../components/seo";
 import Courses from "./index-sections/Courses";
 import FitnessInfo from "./index-sections/FitnessInfo";
+import ImageSeparator from "./index-sections/ImageSeparator";
 import LandingPage from "./index-sections/LandingPage";
 import WhatWeOffer from "./index-sections/WhatWeOffer";
 
@@ -21,6 +22,7 @@ const useStyles = makeStyles(theme => ({
 
 const IndexPage = () => {
   const classes = useStyles();
+
   return (
     <Layout overlayContent transparentUntil={300}>
       <SEO />
@@ -28,9 +30,10 @@ const IndexPage = () => {
       <div className={classes.content}>
         <div id="studio">
           <FitnessInfo />
-          <Box mt={8}>
-            <WhatWeOffer />
+          <Box mt={6} mb={6}>
+            <ImageSeparator />
           </Box>
+          <WhatWeOffer />
         </div>
         <Box mt={8}>
           <Courses />

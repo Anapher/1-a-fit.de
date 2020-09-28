@@ -123,7 +123,6 @@ function LandingPage() {
   const classes = useStyles();
   const {
     background,
-    logo,
     site: {
       siteMetadata: { title },
     },
