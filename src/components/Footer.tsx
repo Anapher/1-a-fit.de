@@ -122,10 +122,18 @@ export default function Footer() {
         </Box>
         <Box display="flex" justifyContent="center">
           <Box>
-            <a href={socials.facebook} className={classes.socialLink}>
+            <a
+              href={socials.facebook}
+              className={classes.socialLink}
+              aria-label="Facebook"
+            >
               <FacebookIcon />
             </a>
-            <a href={socials.instagram} className={classes.socialLink}>
+            <a
+              href={socials.instagram}
+              className={classes.socialLink}
+              aria-label="Instagram"
+            >
               <InstagramIcon style={{ marginLeft: 16 }} />
             </a>
             {/* <a href={socials.youtube} className={classes.socialLink}>

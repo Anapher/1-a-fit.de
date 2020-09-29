@@ -116,6 +116,7 @@ export default function FitnessInfo() {
                   setDialogOpen(true);
                   setDialogChild(node);
                 }}
+                aria-label={node.frontmatter.title}
               >
                 <Img
                   fluid={node.frontmatter.image.childImageSharp.fluid}
