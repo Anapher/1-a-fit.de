@@ -35,6 +35,15 @@ const useStyles = makeStyles(theme => ({
       color: "#757575",
     },
   },
+  myInfo: {
+    fontSize: 10,
+    opacity: 0.25,
+    marginTop: 24,
+  },
+  myInfoLink: {
+    textDecoration: "none",
+    color: "inherit",
+  },
 }));
 
 export default function Footer() {
@@ -64,7 +73,7 @@ export default function Footer() {
       <Container maxWidth="md">
         <Box
           paddingTop={4}
-          paddingBottom={4}
+          paddingBottom={2}
           display="flex"
           justifyContent="center"
         >
@@ -117,13 +126,19 @@ export default function Footer() {
               <FacebookIcon />
             </a>
             <a href={socials.instagram} className={classes.socialLink}>
-              <InstagramIcon style={{ marginLeft: 16, marginRight: 16 }} />
+              <InstagramIcon style={{ marginLeft: 16 }} />
             </a>
-            <a href={socials.youtube} className={classes.socialLink}>
+            {/* <a href={socials.youtube} className={classes.socialLink}>
               <YouTubeIcon />
-            </a>
+            </a> */}
           </Box>
         </Box>
+        <Typography className={classes.myInfo} align="center">
+          gestaltet von{" "}
+          <a href="https://github.com/Anapher" className={classes.myInfoLink}>
+            Vincent Griebel
+          </a>
+        </Typography>
       </Container>
     </Box>
   );
