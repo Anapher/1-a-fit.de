@@ -62,7 +62,7 @@ export default function Courses() {
   } = useStaticQuery(graphql`
     query {
       background: file(
-        relativePath: { eq: "landing-page/background_alt_darker_edited.jpg" }
+        relativePath: { eq: "landing-page/background-courses.jpg" }
       ) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {

@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
 export default function ImageSeparator() {
   const { background } = useStaticQuery(graphql`
     query {
-      background: file(relativePath: { eq: "landing-page/background.jpg" }) {
+      background: file(relativePath: { eq: "landing-page/delta-img.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp

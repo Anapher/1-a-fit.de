@@ -128,9 +128,7 @@ function LandingPage() {
     },
   } = useStaticQuery(graphql`
     query {
-      background: file(
-        relativePath: { eq: "landing-page/background_1a_hell.jpg" }
-      ) {
+      background: file(relativePath: { eq: "landing-page/background.jpg" }) {
         childImageSharp {
           fluid(quality: 90, maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
