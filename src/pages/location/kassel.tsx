@@ -2,7 +2,6 @@ import React from "react";
 import Layout from "../../components/Layout";
 import SEO from "../../components/seo";
 import { useStaticQuery, graphql } from "gatsby";
-import Carousel from "../../components/Carousel";
 import { makeStyles, Typography } from "@material-ui/core";
 import { container } from "../../style/shared";
 
@@ -17,7 +16,6 @@ export default function kassel() {
         maps: { kassel },
       },
     },
-    allFile: { edges },
   } = useStaticQuery(graphql`
     {
       site {
@@ -26,18 +24,6 @@ export default function kassel() {
             kassel {
               src
               info
-            }
-          }
-        }
-      }
-      allFile(filter: { relativePath: { regex: "/carousel/vellmar/" } }) {
-        edges {
-          node {
-            name
-            childImageSharp {
-              fluid(quality: 90, maxWidth: 800) {
-                ...GatsbyImageSharpFluid_withWebp
-              }
             }
           }
         }
@@ -64,11 +50,22 @@ export default function kassel() {
           <Typography variant="h6" gutterBottom>
             Eindrücke von unserem Fitnessstudio in Kassel
           </Typography>
-          <Carousel
-            images={edges.map(x => ({
-              fluid: x.node.childImageSharp.fluid,
-            }))}
-          />
+          <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
+            <iframe
+              src={
+                "https://player.vimeo.com/video/469550596?title=0&byline=0&portrait=0"
+              }
+              frameBorder="0"
+              style={{
+                width: "100%",
+                height: "100%",
+                position: "absolute",
+                top: 0,
+                left: 0,
+              }}
+              allowFullScreen
+            ></iframe>
+          </div>
         </div>
       </div>
     </Layout>
