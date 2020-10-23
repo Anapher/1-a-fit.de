@@ -64,7 +64,7 @@ export default function FitnessInfo() {
             frontmatter {
               image {
                 childImageSharp {
-                  fluid(quality: 90, maxWidth: 500) {
+                  fluid(quality: 90, maxWidth: 320) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
