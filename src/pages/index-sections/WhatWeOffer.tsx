@@ -62,7 +62,7 @@ export default function WhatWeOffer() {
             frontmatter {
               image {
                 childImageSharp {
-                  fluid(quality: 80, maxWidth: 180) {
+                  fluid(quality: 90, maxWidth: 500) {
                     ...GatsbyImageSharpFluid_withWebp
                   }
                 }
