@@ -12,6 +12,7 @@ import LogoIcon from "../../assets/logo_full_white.svg";
 import Parallax from "../../components/Parallax";
 import { container, logoProportion } from "../../style/shared";
 import Socials from "./LandingPageSocials";
+import Countdown from "react-countdown";
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -183,6 +184,27 @@ function LandingPage() {
             </div>
           </div>
           <div className={classnames(classes.horizontalLine, classes.downHr)} />
+          <Typography
+            style={{ color: "white", marginTop: fullScreen ? 16 : 32 }}
+            variant={fullScreen ? "caption" : "h6"}
+            align="center"
+          >
+            Noch{" "}
+            <Countdown
+              date={"2020-12-01T00:00:00"}
+              renderer={({ hours, minutes, seconds, days }) => (
+                <span>
+                  {days} {days === 1 ? "Tag" : "Tage"}, {hours}{" "}
+                  {hours === 1 ? "Stunde" : "Stunden"}, {minutes}{" "}
+                  {minutes === 1 ? "Minute" : "Minuten"}, {seconds}{" "}
+                  {seconds === 1 ? "Sekunde" : "Sekunden"}
+                </span>
+              )}
+            />{" "}
+            bis zur Wiedereröffnung!
+            <br />
+            Weitere Informationen unten.
+          </Typography>
           {fullScreen && (
             <Box mt={2}>
               <Socials dense />
@@ -190,7 +212,7 @@ function LandingPage() {
           )}
         </div>
         {!fullScreen && (
-          <Box mt={4}>
+          <Box mt={4} flexDirection="column" display="flex" alignItems="center">
             <Socials />
           </Box>
         )}
