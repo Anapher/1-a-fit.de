@@ -53,7 +53,7 @@ export default function kassel() {
           <div style={{ padding: "56.25% 0 0 0", position: "relative" }}>
             <iframe
               src={
-                "https://player.vimeo.com/video/469550596?title=0&byline=0&portrait=0"
+                "https://player.vimeo.com/video/474992738?title=0&byline=0&portrait=0"
               }
               frameBorder="0"
               style={{
