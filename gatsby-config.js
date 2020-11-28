@@ -82,18 +82,10 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-material-ui`,
     {
-      resolve: "gatsby-plugin-prefetch-google-fonts",
+      resolve: "gatsby-plugin-google-fonts",
       options: {
-        fonts: [
-          {
-            family: "Roboto",
-          },
-          {
-            family: "Work Sans",
-            variants: ["800"],
-          },
-        ],
-      },
+        fonts: [`Roboto`, `Work Sans\:800`]
+      }
     },
     {
       resolve: "gatsby-plugin-react-svg",
