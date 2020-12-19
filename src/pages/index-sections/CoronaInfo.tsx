@@ -35,7 +35,7 @@ export default function CoronaInfo() {
       <div className={classes.attentionBox}>
         <Box display="flex">
           <Typography variant="h5">
-            AUF ANORDNUNG DER BUNDESREGIERUNG WIRD DAS 1-A-FIT BIS 20. DEZEMBER
+            AUF ANORDNUNG DER BUNDESREGIERUNG WIRD DAS 1-A-FIT BIS 10. JANUAR
             2020 GESCHLOSSEN!
           </Typography>
           <LogoIcon
