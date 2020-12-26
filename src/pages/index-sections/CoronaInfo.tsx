@@ -36,7 +36,7 @@ export default function CoronaInfo() {
         <Box display="flex">
           <Typography variant="h5">
             AUF ANORDNUNG DER BUNDESREGIERUNG WIRD DAS 1-A-FIT BIS 10. JANUAR
-            2020 GESCHLOSSEN!
+            2021 GESCHLOSSEN!
           </Typography>
           <LogoIcon
             style={{
