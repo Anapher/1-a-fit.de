@@ -191,7 +191,7 @@ function LandingPage() {
           >
             Noch{" "}
             <Countdown
-              date={"2021-02-15T00:00:00"}
+              date={"2021-03-07T00:00:00"}
               renderer={({ hours, minutes, seconds, days }) => (
                 <span>
                   {days} {days === 1 ? "Tag" : "Tage"}, {hours}{" "}

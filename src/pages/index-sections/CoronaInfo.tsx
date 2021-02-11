@@ -35,8 +35,8 @@ export default function CoronaInfo() {
       <div className={classes.attentionBox}>
         <Box display="flex">
           <Typography variant="h5">
-            AUF ANORDNUNG DER BUNDESREGIERUNG WIRD DAS 1-A-FIT BIS 15. FEBRUAR
-            2021 GESCHLOSSEN!
+            AUF ANORDNUNG DER BUNDESREGIERUNG WIRD DAS 1-A-FIT BIS 7. MÄRZ 2021
+            GESCHLOSSEN!
           </Typography>
           <LogoIcon
             style={{
