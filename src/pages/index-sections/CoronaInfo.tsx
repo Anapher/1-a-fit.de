@@ -78,7 +78,7 @@ export default function CoronaInfo() {
           <p>
             Der Trainingstermin muss vorab über den Dienst <b>MySports</b>{" "}
             gebucht werden. Du kannst dir entweder direkt über deinen Webbrowser{" "}
-            einen Termin reservieren oder über die App, siehe unten.
+            einen Termin reservieren oder über die App, siehe unten.{" "}
             <a href="https://www.mysports.com/studio/MWFmaXQ6MTIxMDAwMTQyMA%3D%3D?ref=portal">
               Hier geht's zur 1-a-fit Seite auf MySports!
             </a>{" "}
