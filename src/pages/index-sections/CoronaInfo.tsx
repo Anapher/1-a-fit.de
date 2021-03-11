@@ -51,15 +51,14 @@ export default function CoronaInfo() {
         </Box>
         <Typography style={{ marginTop: 8 }} component="span">
           <p>
-            Bis auf weiteres nur 1 Sportler pro 40m² Trainingsfläche, daher ist
-            vorerst <b>ein Trainingstermin pro Woche</b> für dich möglich.
+            Bislang ist <b>ein Trainingstermin pro Woche</b> für dich möglich.
             Sollte es weitere Lockerungen geben, wird diese Regelung bestimmt
             geändert.
           </p>
           <ul>
             <li>
-              Alle, denen es nicht möglich ist auf eine App zuzugreifen, können
-              den Trainingstermin auch über Telefon buchen.
+              Alle, denen es nicht möglich ist auf unsere App zuzugreifen,
+              können den Trainingstermin auch über Telefon buchen.
             </li>
             <li>
               Die Trainingstermine gibt es immer nur für{" "}
@@ -70,7 +69,7 @@ export default function CoronaInfo() {
               ist beschränkt auf <b>50 Minuten</b>.
             </li>
             <li>
-              Die bisher gültigen Hygieneregeln bleiben bestehen: 1,5 m Abstand,
+              Die bisher gültigen Hygieneregeln bleiben bestehen: 3 m Abstand,
               Geräte nach Benutzung desinfizieren, Händedesinfektion nutzen usw.
             </li>
             <li>Umkleiden und Duschen bleiben vorerst geschlossen.</li>
@@ -106,6 +105,9 @@ export default function CoronaInfo() {
             <li>auf Kursplan (graues/blaues 🕺Männchen unten) gehen</li>
             <li>oben rechts (3 Striche) Club auswählen</li>
             <li>Kurs buchen</li>
+            <li>
+              Sollte das nicht funktionieren, bitte eine kurze E-Mail schreiben
+            </li>
           </ul>
         </Typography>
       </div>
