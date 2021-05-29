@@ -188,9 +188,9 @@ function LandingPage() {
             variant={fullScreen ? "caption" : "h6"}
             align="center"
           >
-           Wir haben geöffnet!
+            Wir haben geöffnet!
             <br />
-            Weitere Informationen unten.
+            Bitte beachtet die Hinweise zu den einzelnen Standorten.
           </Typography>
           {fullScreen && (
             <Box mt={2}>

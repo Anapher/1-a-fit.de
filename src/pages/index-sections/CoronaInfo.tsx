@@ -37,7 +37,7 @@ export default function CoronaInfo() {
       <div className={classes.attentionBox}>
         <Box display="flex">
           <Typography variant="h5" style={{ flex: 1 }}>
-            Wir haben geöffnet!
+            Wir haben teilweise geöffnet!
           </Typography>
           <LogoIcon
             style={{
@@ -50,6 +50,20 @@ export default function CoronaInfo() {
           />
         </Box>
         <Typography style={{ marginTop: 8 }} component="span">
+          <Typography variant="h6">Für den Standort Kassel</Typography>
+          <p>
+            Voraussichtliche Öffnung ab Mittwoch 03.06.21. Aktuell noch
+            geschlossen.
+          </p>
+
+          <Typography variant="h6">Für den Standort Vellmar</Typography>
+          <p>
+            <b>
+              Aktueller Test oder vollständig geimpft oder genesen erforderlich
+              bis 30.05.21
+            </b>
+          </p>
+
           <p>
             Bislang ist <b>ein Trainingstermin pro Woche</b> für dich möglich.
             Sollte es weitere Lockerungen geben, wird diese Regelung bestimmt
