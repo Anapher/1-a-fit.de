@@ -188,7 +188,9 @@ function LandingPage() {
             variant={fullScreen ? "caption" : "h6"}
             align="center"
           >
-            Geschlossen wegen des Infektionsschutzgesetzes.
+           Wir haben geöffnet!
+            <br />
+            Weitere Informationen unten.
           </Typography>
           {fullScreen && (
             <Box mt={2}>
