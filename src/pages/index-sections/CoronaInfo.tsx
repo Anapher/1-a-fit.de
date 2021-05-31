@@ -58,13 +58,6 @@ export default function CoronaInfo() {
 
           <Typography variant="h6">Für den Standort Vellmar</Typography>
           <p>
-            <b>
-              Aktueller Test oder vollständig geimpft oder genesen erforderlich
-              bis 30.05.21
-            </b>
-          </p>
-
-          <p>
             Bislang ist <b>ein Trainingstermin pro Woche</b> für dich möglich.
             Sollte es weitere Lockerungen geben, wird diese Regelung bestimmt
             geändert.
