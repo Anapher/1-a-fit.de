@@ -50,12 +50,9 @@ export default function CoronaInfo() {
           />
         </Box>
         <Typography style={{ marginTop: 8 }} component="span">
-          <Typography variant="h6">Für den Standort Kassel</Typography>
-          <p>
-            Aktueller Test oder vollständig geimpft oder genesen erforderlich.
-          </p>
-
-          <Typography variant="h6">Für den Standort Vellmar</Typography>
+          <Typography variant="h6">
+            Für den Standort Kassel &amp; Vellmar
+          </Typography>
           <p>
             Bislang ist <b>ein Trainingstermin pro Woche</b> für dich möglich.
             Sollte es weitere Lockerungen geben, wird diese Regelung bestimmt
