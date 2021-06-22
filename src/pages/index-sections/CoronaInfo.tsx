@@ -37,7 +37,7 @@ export default function CoronaInfo() {
       <div className={classes.attentionBox}>
         <Box display="flex">
           <Typography variant="h5" style={{ flex: 1 }}>
-            Wir haben geöffnet!
+            Wir haben geöffnet! Ab Freitag keine Terminvergabe mehr notwendig.
           </Typography>
           <LogoIcon
             style={{
@@ -86,7 +86,6 @@ export default function CoronaInfo() {
             </a>{" "}
             Zutritt nur möglich, wenn vorher der Termin gebucht wurde.
           </p>
-
           <Box display="flex" alignItems="center" mb={2}>
             <Box>
               <a href="https://play.google.com/store/apps/details?id=io.noexcuse.android&hl=de&gl=US&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1">
