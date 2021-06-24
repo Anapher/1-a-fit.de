@@ -37,7 +37,7 @@ const useStyles = makeStyles(theme => ({
   },
   myInfo: {
     fontSize: 10,
-    opacity: 0.25,
+    opacity: 0.15,
     marginTop: 24,
   },
   myInfoLink: {
