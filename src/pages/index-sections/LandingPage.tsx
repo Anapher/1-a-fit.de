@@ -189,8 +189,6 @@ function LandingPage() {
             align="center"
           >
             Wir haben geöffnet!
-            <br />
-            Bitte beachte die Hinweise zu den Standorten.
           </Typography>
           {fullScreen && (
             <Box mt={2}>
