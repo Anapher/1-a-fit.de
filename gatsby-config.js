@@ -57,7 +57,13 @@ module.exports = {
     },
   },
   plugins: [
+    `gatsby-plugin-image`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-material-ui`,
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -65,8 +71,6 @@ module.exports = {
         path: `${__dirname}/content`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -79,8 +83,6 @@ module.exports = {
         icon: `src/assets/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-material-ui`,
     {
       resolve: "gatsby-plugin-google-fonts",
       options: {
@@ -118,7 +120,6 @@ module.exports = {
         ],
       },
     },
-    `gatsby-transformer-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
