@@ -16,7 +16,6 @@ import {
   useTheme,
 } from "@material-ui/core";
 import { graphql, useStaticQuery } from "gatsby";
-import Img from "gatsby-image";
 import React, { useState } from "react";
 import {
   container,
@@ -27,6 +26,7 @@ import _ from "lodash";
 import InfoDialog from "../../components/InfoDialog";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import LogoIcon from "../../assets/logo_full.svg";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 type FitnessOffer = {
   desc: string;
@@ -62,9 +62,7 @@ export default function WhatWeOffer() {
             frontmatter {
               image {
                 childImageSharp {
-                  fluid(quality: 90, maxWidth: 500) {
-                    ...GatsbyImageSharpFluid_withWebp
-                  }
+                  gatsbyImageData(layout: CONSTRAINED, width: 500)
                 }
               }
               title
@@ -145,11 +143,16 @@ export default function WhatWeOffer() {
                 }}
               >
                 <CardMedia
-                  style={{ height: cardImageHeight }}
-                  component={Img}
-                  fluid={frontmatter.image.childImageSharp.fluid}
                   title={frontmatter.title}
-                />
+                  style={{ height: cardImageHeight, overflowY: "hidden" }}
+                >
+                  <GatsbyImage
+                    image={getImage(frontmatter.image)}
+                    alt={frontmatter.title}
+                    style={{ width: "100%", height: "100%" }}
+                    objectFit="cover"
+                  />
+                </CardMedia>
                 <CardContent style={{ flex: 1 }}>
                   <Typography gutterBottom variant="h6" component="h2">
                     {frontmatter.title}
