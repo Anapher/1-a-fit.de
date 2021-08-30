@@ -1,47 +1,38 @@
-import { makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
-import { graphql, useStaticQuery } from "gatsby";
-import React from "react";
-import Img from "gatsby-image";
+import { makeStyles } from '@material-ui/core';
+import { StaticImage } from 'gatsby-plugin-image';
+import React from 'react';
+import StaticImageParallax from '../../components/StaticImageParallax';
 
-const useStyles = makeStyles(theme => ({
-  image: {
-    height: 600,
-    [theme.breakpoints.down("md")]: {
-      height: 400,
-    },
-    [theme.breakpoints.down("xs")]: {
-      height: 250,
-    },
-  },
+const useStyles = makeStyles((theme) => ({
+   image: {
+      height: 600,
+      [theme.breakpoints.down('md')]: {
+         height: 400,
+      },
+      [theme.breakpoints.down('xs')]: {
+         height: 250,
+      },
+   },
 }));
 
 export default function ImageSeparator() {
-  const { background } = useStaticQuery(graphql`
-    query {
-      background: file(relativePath: { eq: "landing-page/delta-img.jpg" }) {
-        childImageSharp {
-          fluid(quality: 90, maxWidth: 1920) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
+   const classes = useStyles();
 
-  const theme = useTheme();
-
-  let height = 600;
-  const mdDown = useMediaQuery(theme.breakpoints.down("md"));
-  const xsDown = useMediaQuery(theme.breakpoints.down("xs"));
-
-  if (mdDown) height = 400;
-  if (xsDown) height = 250;
-
-  const strenght = 200;
-
-  const classes = useStyles();
-
-  return (
-    <Img fluid={background.childImageSharp.fluid} className={classes.image} />
-  );
+   return (
+      <StaticImageParallax
+         aspectRatio={1.33}
+         parallaxScroll={100}
+         image={
+            <StaticImage
+               src="../../assets/landing-page/delta-img.jpg"
+               layout="fullWidth"
+               alt="1a fit Vellmar"
+               objectFit="cover"
+               imgStyle={{ height: '100%' }}
+               style={{ height: '100%' }}
+            />
+         }
+         className={classes.image}
+      />
+   );
 }

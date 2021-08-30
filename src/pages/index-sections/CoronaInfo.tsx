@@ -1,9 +1,7 @@
-import { Box, fade, Grid, makeStyles, Typography } from "@material-ui/core";
+import { Box, fade, makeStyles, Typography } from "@material-ui/core";
 import React from "react";
-import { container, logoProportion } from "../../style/shared";
 import LogoIcon from "../../assets/logo_full.svg";
-import AppstoreBadge from "../../assets/appstore.svg";
-import GooglePlayBadge from "../../assets/googleplay.svg";
+import { container, logoProportion } from "../../style/shared";
 
 const useStyles = makeStyles(theme => ({
   root: {
