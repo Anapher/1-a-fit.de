@@ -118,6 +118,7 @@ export default function FitnessInfo() {
                         alt={node.frontmatter.title}
                         image={getImage(node.frontmatter.image)}
                         className={classes.roundedImage}
+                        imgClassName={classes.roundedImage}
                      />
                   </ButtonBase>
                   <Box display="flex" justifyContent="center">
