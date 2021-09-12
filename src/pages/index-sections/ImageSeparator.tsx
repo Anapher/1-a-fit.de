@@ -20,7 +20,6 @@ export default function ImageSeparator() {
 
    return (
       <StaticImageParallax
-         aspectRatio={1.33}
          parallaxScroll={100}
          image={
             <StaticImage
@@ -28,8 +27,7 @@ export default function ImageSeparator() {
                layout="fullWidth"
                alt="1a fit Vellmar"
                objectFit="cover"
-               imgStyle={{ height: '100%' }}
-               style={{ height: '100%' }}
+               style={{ height: '100%', width: '100%' }}
             />
          }
          className={classes.image}

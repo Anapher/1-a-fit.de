@@ -20,18 +20,10 @@ const useStyles = makeStyles({
 
 type Props = React.HTMLAttributes<HTMLDivElement> & {
    image: React.ReactNode;
-   aspectRatio: number;
    parallaxScroll?: number;
 };
 
-export default function StaticImageParallax({
-   image,
-   children,
-   aspectRatio,
-   className,
-   parallaxScroll = 200,
-   ...props
-}: Props) {
+export default function StaticImageParallax({ image, children, className, parallaxScroll = 200, ...props }: Props) {
    const classes = useStyles();
 
    const [elementTop, setElementTop] = useState(0);
@@ -53,7 +45,6 @@ export default function StaticImageParallax({
             style={{
                y,
                height: `calc(100% + ${parallaxScroll}px)`,
-               width: `calc(100% + ${parallaxScroll * aspectRatio}px)`,
             }}
          >
             {image}

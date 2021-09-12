@@ -125,8 +125,9 @@ function LandingPage() {
             <StaticImage
                src="../../assets/landing-page/background.jpg"
                layout="fullWidth"
-               alt="Hero Image"
+               alt=""
                objectFit="cover"
+               style={{ width: '100%', height: '100%' }}
             />
          }
       >

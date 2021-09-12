@@ -73,13 +73,13 @@ export default function Courses() {
    return (
       <ThemeProvider theme={darkTheme}>
          <StaticImageParallax
-            aspectRatio={1.77}
             image={
                <StaticImage
                   src="../../assets/landing-page/background-courses.jpg"
                   layout="fullWidth"
                   alt="Courses"
                   objectFit="cover"
+                  style={{ height: '100%', width: '100%' }}
                />
             }
             style={{

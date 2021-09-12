@@ -10,8 +10,8 @@ const useStyles = makeStyles({
    imageContainer: {
       position: 'absolute',
       top: 0,
-      bottom: 0,
       left: 0,
+      bottom: 0,
       right: 0,
       zIndex: -6000,
    },
@@ -28,13 +28,12 @@ const useStyles = makeStyles({
 
 type Props = {
    image: React.ReactNode;
-   aspectRatio: number;
    parallaxScroll?: number;
    className?: string;
    children?: React.ReactNode;
 };
 
-export default function LandingPageParallax({ image, children, aspectRatio, className }: Props) {
+export default function LandingPageParallax({ image, children, className }: Props) {
    const classes = useStyles();
 
    const [elementTop, setElementTop] = useState(0);
@@ -58,14 +57,7 @@ export default function LandingPageParallax({ image, children, aspectRatio, clas
          }}
       >
          <div className={classes.content}>
-            <div
-               className={classes.imageContainer}
-               style={{
-                  width: `calc(100% * ${aspectRatio}px)`,
-               }}
-            >
-               {image}
-            </div>
+            <div className={classes.imageContainer}>{image}</div>
             {children}
          </div>
       </motion.div>
