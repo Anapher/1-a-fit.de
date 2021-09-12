@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import { Link } from 'gatsby';
 
 const to = (link: string) => ({ component: Link, to: link });
 

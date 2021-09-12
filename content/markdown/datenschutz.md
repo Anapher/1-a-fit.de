@@ -1,36 +1,32 @@
 ---
-title: "Datenschutz"
+title: 'Datenschutz'
 ---
 
-
-I. Name und Anschrift des Verantwortlichen
-------------------------------------------
+## I. Name und Anschrift des Verantwortlichen
 
 Der Verantwortliche im Sinne der Datenschutz-Grundverordnung und anderer nationaler Datenschutzgesetze der Mitgliedsstaaten sowie sonstiger datenschutzrechtlicher Bestimmungen ist die:
 
-*1-a-fit Betriebs GmbH*
+_1-a-fit Betriebs GmbH_
 
-*Geschäftsführer: Stefan Heiland*
+_Geschäftsführer: Stefan Heiland_
 
-*Brüder-Grimm-Str. 26*
+_Brüder-Grimm-Str. 26_
 
-*34246 Vellmar*
+_34246 Vellmar_
 
-*Deutschland*
+_Deutschland_
 
-*Tel.: 0561 861 555 16*
+_Tel.: 0561 861 555 16_
 
-*Website: 1-a-fit.de*
+_Website: 1-a-fit.de_
 
-*Handelsregister: HRB 16060*
+_Handelsregister: HRB 16060_
 
-II. Name und Anschrift des Datenschutzbeauftragten
---------------------------------------------------
+## II. Name und Anschrift des Datenschutzbeauftragten
 
 Auf Grund der Unternehmensgröße wird kein extra Datenschutzbeauftragter benötigt. Verantwortlich ist der Geschäftsführer.
 
-III. Allgemeines zur Datenverarbeitung
---------------------------------------
+## III. Allgemeines zur Datenverarbeitung
 
 ### 1. Umfang der Verarbeitung personenbezogener Daten
 
@@ -52,8 +48,7 @@ Ist die Verarbeitung zur Wahrung eines berechtigten Interesses unseres Unternehm
 
 Die personenbezogenen Daten der betroffenen Person werden gelöscht oder gesperrt, sobald der Zweck der Speicherung entfällt. Eine Speicherung kann darüber hinaus erfolgen, wenn dies durch den europäischen oder nationalen Gesetzgeber in unionsrechtlichen Verordnungen, Gesetzen oder sonstigen Vorschriften, denen der Verantwortliche unterliegt, vorgesehen wurde. Eine Sperrung oder Löschung der Daten erfolgt auch dann, wenn eine durch die genannten Normen vorgeschriebene Speicherfrist abläuft, es sei denn, dass eine Erforderlichkeit zur weiteren Speicherung der Daten für einen Vertragsabschluss oder eine Vertragserfüllung besteht.
 
-IV. Bereitstellung der Website und Erstellung von Logfiles
-----------------------------------------------------------
+## IV. Bereitstellung der Website und Erstellung von Logfiles
 
 ### 1. Beschreibung und Umfang der Datenverarbeitung
 
@@ -99,8 +94,7 @@ Im Falle der Speicherung der Daten in Logfiles ist dies nach spätestens sieben 
 
 Die Erfassung der Daten zur Bereitstellung der Website und die Speicherung der Daten in Logfiles ist für den Betrieb der Internetseite zwingend erforderlich. Es besteht folglich seitens des Nutzers keine Widerspruchsmöglichkeit.
 
-V. E-Mail-Kontakt
------------------
+## V. E-Mail-Kontakt
 
 ### 1. Beschreibung und Umfang der Datenverarbeitung
 
@@ -126,8 +120,7 @@ Der Nutzer hat jederzeit die Möglichkeit, seine Einwilligung zur Verarbeitung d
 
 Alle personenbezogenen Daten, die im Zuge der Kontaktaufnahme gespeichert wurden, werden in diesem Fall gelöscht.
 
-VI. Rechte der betroffenen Person
----------------------------------
+## VI. Rechte der betroffenen Person
 
 Werden personenbezogene Daten von Ihnen verarbeitet, sind Sie Betroffener i.S.d. DSGVO und es stehen Ihnen folgende Rechte gegenüber dem Verantwortlichen zu:
 
@@ -183,7 +176,7 @@ Sie können von dem Verantwortlichen verlangen, dass die Sie betreffenden person
 
 (5) Die Löschung der Sie betreffenden personenbezogenen Daten ist zur Erfüllung einer rechtlichen Verpflichtung nach dem Unionsrecht oder dem Recht der Mitgliedstaaten erforderlich, dem der Verantwortliche unterliegt.
 
-(6)  Die Sie betreffenden personenbezogenen Daten wurden in Bezug auf angebotene Dienste der Informationsgesellschaft gemäß Art. 8 Abs. 1 DSGVO erhoben.
+(6) Die Sie betreffenden personenbezogenen Daten wurden in Bezug auf angebotene Dienste der Informationsgesellschaft gemäß Art. 8 Abs. 1 DSGVO erhoben.
 
 #### b) Information an Dritte
 
