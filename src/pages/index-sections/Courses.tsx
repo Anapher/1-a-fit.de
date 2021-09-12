@@ -27,6 +27,8 @@ const darkTheme = createTheme({
 const useStyles = makeStyles({
    container: {
       ...container,
+      paddingTop: 80,
+      paddingBottom: 80,
    },
    tableCell: {
       backgroundColor: '#27ae60',
@@ -82,11 +84,6 @@ export default function Courses() {
                   style={{ height: '100%', width: '100%' }}
                />
             }
-            style={{
-               paddingTop: 80,
-               paddingBottom: 80,
-               maxWidth: '100vw',
-            }}
          >
             <div className={classes.container} id="kurse">
                <Box display="flex" flexDirection="row" justifyContent="space-between" alignItems="flex-start">
