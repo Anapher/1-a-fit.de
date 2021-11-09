@@ -1,7 +1,10 @@
-import { Box, alpha, makeStyles, Typography } from '@material-ui/core';
+import { Box, alpha, makeStyles, Typography, Button } from '@material-ui/core';
+import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
 import LogoIcon from '../../assets/logo_full.svg';
 import { container, logoProportion } from '../../style/shared';
+import to from '../../utils/to';
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -51,6 +54,21 @@ export default function CoronaInfo() {
                Geöffnet mit Abstands- und Hygienekonzept. Das 1a fit freut sich über einen weiteren Schritt hin zur
                Normalität. <br /> Alle Bereiche geöffnet.
             </Typography>
+         </div>
+
+         <Link to="/gutschein-wo2gmc">
+            <StaticImage
+               src="../../assets/landing-page/voucher_wo2gmc_banner.png"
+               layout="fullWidth"
+               alt="Jetzt 1a fit starten, ab 2022 zahlen!"
+               objectFit="contain"
+               style={{ maxWidth: 280, marginLeft: 'auto', marginRight: 'auto', marginTop: 32 }}
+            />
+         </Link>
+         <div style={{ display: 'flex', justifyContent: 'center', marginTop: 16 }}>
+            <Button variant="contained" color="secondary" {...to('/gutschein-wo2gmc')}>
+               Mehr erfahren
+            </Button>
          </div>
       </div>
    );
