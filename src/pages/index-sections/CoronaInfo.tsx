@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
       paddingLeft: 8,
       paddingTop: 8,
       paddingBottom: 8,
+      paddingRight: 8,
       borderRadius: theme.shape.borderRadius,
       [theme.breakpoints.down(576)]: {
          marginLeft: 0,
@@ -36,9 +37,9 @@ export default function CoronaInfo() {
    return (
       <div className={classes.root}>
          <div className={classes.attentionBox}>
-            <Box display="flex">
+            <Box display="flex" mb={2}>
                <Typography variant="h5" style={{ flex: 1 }}>
-                  Wir haben geöffnet! Keine Terminvergabe mehr notwendig.
+                  Neue Regelungen auf Basis des Bundesinfektionsschutzgesetzes
                </Typography>
                <LogoIcon
                   style={{
@@ -50,9 +51,9 @@ export default function CoronaInfo() {
                   }}
                />
             </Box>
-            <Typography style={{ marginTop: 8 }} component="span">
-               Geöffnet mit Abstands- und Hygienekonzept. Das 1a fit freut sich über einen weiteren Schritt hin zur
-               Normalität. <br /> Alle Bereiche geöffnet.
+            <Typography style={{ marginTop: 16 }} component="span">
+               2G = geimpft oder genesen. Ausgenommen sind Kinder und Jugendliche unter 18 Jahre &amp; Menschen, die
+               sich aus medizinischen Gründen nicht impfen lassen können.
             </Typography>
          </div>
 
