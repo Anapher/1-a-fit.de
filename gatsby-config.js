@@ -24,7 +24,7 @@ module.exports = {
             id: 'wo2gmc',
             image: 'voucher/voucher_wo2gmc.png',
             file: 'voucher/voucher_wo2gmc.pdf',
-            title: 'Jetzt 1a fit starten, ab 2022 zahlen',
+            title: 'Fitnesstraining 4,95€ pro Monat',
          },
       ],
       maps: {
