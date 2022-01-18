@@ -59,9 +59,9 @@ export default function CoronaInfo() {
 
          <Link to="/gutschein-wo2gmc">
             <StaticImage
-               src="../../assets/landing-page/voucher_wo2gmc_banner.png"
+               src="../../assets/landing-page/voucher_wo2gmc.png"
                layout="fullWidth"
-               alt="Jetzt 1a fit starten, ab 2022 zahlen!"
+               alt="4,95€ für die ersten fünf Monate!"
                objectFit="contain"
                style={{ maxWidth: 280, marginLeft: 'auto', marginRight: 'auto', marginTop: 32 }}
             />
