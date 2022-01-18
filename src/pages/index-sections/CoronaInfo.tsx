@@ -53,7 +53,7 @@ export default function CoronaInfo() {
             </Box>
             <Typography style={{ marginTop: 16 }} component="span">
                2G = geimpft oder genesen. Ausgenommen sind Kinder und Jugendliche unter 18 Jahre &amp; Menschen, die
-               sich aus medizinischen Gründen nicht impfen lassen können.
+               sich aus medizinischen Gründen nicht impfen lassen können. Ab einer Inzidenz von 350 gilt 2G+
             </Typography>
          </div>
 

@@ -161,7 +161,7 @@ function LandingPage() {
                   variant={fullScreen ? 'caption' : 'h6'}
                   align="center"
                >
-                  Wir haben geöffnet!
+                  Wir freuen uns auf deinen Besuch!
                </Typography>
                {fullScreen && (
                   <Box mt={2}>
