@@ -135,6 +135,12 @@ export default function FitnessInfo() {
                      <DialogContentText tabIndex={-1} ref={descriptionElementRef}>
                         {dialogChild && <MDXRenderer>{dialogChild.body}</MDXRenderer>}
                      </DialogContentText>
+                     <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center">
+                        <Button variant="contained" color="secondary" href="tel:0561-86155516">
+                           Jetzt anrufen und Termin vereinbaren!
+                        </Button>
+                        <Typography style={{ marginTop: 8 }}>Tel.: 0561 861 555 16</Typography>
+                     </Box>
                   </DialogContent>
                   <DialogActions>
                      <Button onClick={handleCloseDialog} color="primary">
