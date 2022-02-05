@@ -36,27 +36,6 @@ export default function CoronaInfo() {
    const classes = useStyles();
    return (
       <div className={classes.root}>
-         <div className={classes.attentionBox}>
-            <Box display="flex" mb={2}>
-               <Typography variant="h5" style={{ flex: 1 }}>
-                  Neue Regelungen auf Basis des Bundesinfektionsschutzgesetzes
-               </Typography>
-               <LogoIcon
-                  style={{
-                     width: 80,
-                     height: 80 * logoProportion,
-                     display: 'block',
-                     marginRight: 16,
-                     marginLeft: 16,
-                  }}
-               />
-            </Box>
-            <Typography style={{ marginTop: 16 }} component="span">
-               2G = geimpft oder genesen. Ausgenommen sind Kinder und Jugendliche unter 18 Jahre &amp; Menschen, die
-               sich aus medizinischen Gründen nicht impfen lassen können. Ab einer Inzidenz von 350 gilt 2G+
-            </Typography>
-         </div>
-
          <Link to="/gutschein-wo2gmc">
             <StaticImage
                src="../../assets/landing-page/voucher_wo2gmc.png"

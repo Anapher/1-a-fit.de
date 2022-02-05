@@ -11,12 +11,7 @@ export default function CoronaPopup() {
          <DialogTitle>Corona Informationen</DialogTitle>
          <DialogContent>
             <DialogContentText>
-               Dein 1a fit hat mit Einschränkungen geöffnet (2G+).
-               <br />
-               <br />
-               Falls du <b>Geboostert</b> bist, musst du nichts weiter beachten.
-               <br />
-               Geimpfte oder Genesene müssen einen Test vorweisen
+               Das 1a fit hat für dich geöffnet. Nach den Vorgaben der hessischen Landesregierung gilt 2G+.
             </DialogContentText>
             <DialogActions>
                <Button onClick={handleClose}>Schließen</Button>
