@@ -3,12 +3,12 @@ import React from 'react';
 import CoronaPopup from '../components/CoronaPopup';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
-import CoronaInfo from './index-sections/CoronaInfo';
-import Courses from './index-sections/Courses';
-import FitnessInfo from './index-sections/FitnessInfo';
-import ImageSeparator from './index-sections/ImageSeparator';
-import LandingPage from './index-sections/LandingPage';
-import WhatWeOffer from './index-sections/WhatWeOffer';
+import CoronaInfo from '../index-sections/CoronaInfo';
+import Courses from '../index-sections/Courses';
+import FitnessInfo from '../index-sections/FitnessInfo';
+import ImageSeparator from '../index-sections/ImageSeparator';
+import LandingPage from '../index-sections/LandingPage';
+import WhatWeOffer from '../index-sections/WhatWeOffer';
 
 const useStyles = makeStyles((theme) => ({
    content: {

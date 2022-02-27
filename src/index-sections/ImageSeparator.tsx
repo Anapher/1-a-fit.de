@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import StaticImageParallax from '../../components/StaticImageParallax';
+import StaticImageParallax from '../components/StaticImageParallax';
 
 const useStyles = makeStyles((theme) => ({
    image: {

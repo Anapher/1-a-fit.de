@@ -2,9 +2,9 @@ import { Box, alpha, makeStyles, Typography, Button } from '@material-ui/core';
 import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import LogoIcon from '../../assets/logo_full.svg';
-import { container, logoProportion } from '../../style/shared';
-import to from '../../utils/to';
+import LogoIcon from '../assets/logo_full.svg';
+import { container, logoProportion } from '../style/shared';
+import to from '../utils/to';
 
 const useStyles = makeStyles((theme) => ({
    root: {
@@ -38,7 +38,7 @@ export default function CoronaInfo() {
       <div className={classes.root}>
          <Link to="/gutschein-wo2gmc">
             <StaticImage
-               src="../../assets/landing-page/voucher_wo2gmc.png"
+               src="../assets/landing-page/voucher_wo2gmc.png"
                layout="fullWidth"
                alt="4,95€ für die ersten fünf Monate!"
                objectFit="contain"

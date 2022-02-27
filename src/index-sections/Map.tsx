@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { container } from '../../style/shared';
+import { container } from '../style/shared';
 import { makeStyles, Grid, Typography, Box } from '@material-ui/core';
 import { useStaticQuery, graphql } from 'gatsby';
 

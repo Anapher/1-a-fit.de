@@ -2,9 +2,9 @@ import { Box, makeStyles, Typography, useMediaQuery, useTheme } from '@material-
 import classnames from 'classnames';
 import { StaticImage } from 'gatsby-plugin-image';
 import React from 'react';
-import LogoIcon from '../../assets/logo_full_white.svg';
-import LandingPageParallax from '../../components/LandingPageParallax';
-import { container, logoProportion } from '../../style/shared';
+import LogoIcon from '../assets/logo_full_white.svg';
+import LandingPageParallax from '../components/LandingPageParallax';
+import { container, logoProportion } from '../style/shared';
 import Socials from './LandingPageSocials';
 
 const useStyles = makeStyles((theme) => ({

@@ -11,11 +11,11 @@ import {
    createTheme,
    Box,
 } from '@material-ui/core';
-import { container, logoProportion } from '../../style/shared';
+import { container, logoProportion } from '../style/shared';
 import { graphql, useStaticQuery } from 'gatsby';
-import { sectionHeaderText } from '../../style/theme-shared';
-import LogoIcon from '../../assets/logo_full_white.svg';
-import StaticImageParallax from '../../components/StaticImageParallax';
+import { sectionHeaderText } from '../style/theme-shared';
+import LogoIcon from '../assets/logo_full_white.svg';
+import StaticImageParallax from '../components/StaticImageParallax';
 import { StaticImage } from 'gatsby-plugin-image';
 
 const darkTheme = createTheme({

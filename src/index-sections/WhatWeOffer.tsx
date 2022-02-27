@@ -17,11 +17,11 @@ import {
 } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { useState } from 'react';
-import { container, fixedFullWidthGrid, logoProportion } from '../../style/shared';
+import { container, fixedFullWidthGrid, logoProportion } from '../style/shared';
 import _ from 'lodash';
-import InfoDialog from '../../components/InfoDialog';
+import InfoDialog from '../components/InfoDialog';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import LogoIcon from '../../assets/logo_full.svg';
+import LogoIcon from '../assets/logo_full.svg';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 type FitnessOffer = {

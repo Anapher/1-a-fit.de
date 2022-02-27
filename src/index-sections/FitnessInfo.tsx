@@ -12,9 +12,9 @@ import {
 } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { useState } from 'react';
-import { container, fixedFullWidthGrid } from '../../style/shared';
+import { container, fixedFullWidthGrid } from '../style/shared';
 import _ from 'lodash';
-import InfoDialog from '../../components/InfoDialog';
+import InfoDialog from '../components/InfoDialog';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
