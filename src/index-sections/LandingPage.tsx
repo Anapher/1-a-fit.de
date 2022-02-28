@@ -123,7 +123,7 @@ function LandingPage() {
          aspectRatio={1.5}
          image={
             <StaticImage
-               src="../../assets/landing-page/background.jpg"
+               src="../assets/landing-page/background.jpg"
                layout="fullWidth"
                alt=""
                objectFit="cover"

@@ -77,7 +77,7 @@ export default function Courses() {
          <StaticImageParallax
             image={
                <StaticImage
-                  src="../../assets/landing-page/background-courses.jpg"
+                  src="../assets/landing-page/background-courses.jpg"
                   layout="fullWidth"
                   alt="Courses"
                   objectFit="cover"

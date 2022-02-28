@@ -23,7 +23,7 @@ export default function ImageSeparator() {
          parallaxScroll={100}
          image={
             <StaticImage
-               src="../../assets/landing-page/delta-img.jpg"
+               src="../assets/landing-page/delta-img.jpg"
                layout="fullWidth"
                alt="1a fit Vellmar"
                objectFit="cover"
