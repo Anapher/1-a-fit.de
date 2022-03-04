@@ -3,7 +3,6 @@ import React from 'react';
 import CoronaPopup from '../components/CoronaPopup';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
-import CoronaInfo from './index-sections/CoronaInfo';
 import Courses from './index-sections/Courses';
 import FitnessInfo from './index-sections/FitnessInfo';
 import ImageSeparator from './index-sections/ImageSeparator';
@@ -32,7 +31,6 @@ const IndexPage = () => {
          <CoronaPopup />
          <div className={classes.content}>
             <div id="studio">
-               <CoronaInfo />
                <FitnessInfo />
                <Box mt={6} mb={6}>
                   <ImageSeparator />
