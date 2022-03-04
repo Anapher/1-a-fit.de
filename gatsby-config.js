@@ -20,12 +20,6 @@ module.exports = {
             file: 'voucher/voucher_k2cgi.pdf',
             title: 'Gutschein für 6 Monate Training für 60€',
          },
-         {
-            id: 'wo2gmc',
-            image: 'voucher/voucher_wo2gmc.png',
-            file: 'voucher/voucher_wo2gmc.pdf',
-            title: 'Fitnesstraining 4,95€ pro Monat',
-         },
       ],
       maps: {
          vellmar: {
