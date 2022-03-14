@@ -1,4 +1,4 @@
-import { Button, makeStyles, Typography, Link as MaterialLink } from '@material-ui/core';
+import { Button, Link as MaterialLink, makeStyles, Typography } from '@material-ui/core';
 import { Phone } from '@material-ui/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'gatsby';
@@ -6,6 +6,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import _ from 'lodash';
 import React, { useEffect, useState } from 'react';
 import { container } from '../style/shared';
+import to from '../utils/to';
 
 const quotes = [
    {
@@ -52,7 +53,7 @@ const quotes = [
 
 const CHANGE_INTERVAL = 10000;
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
    container: {
       ...container,
       display: 'flex',
@@ -70,6 +71,26 @@ const useStyles = makeStyles(() => ({
       position: 'absolute',
       left: 0,
       right: 0,
+   },
+   currentPromotion: {
+      display: 'flex',
+      [theme.breakpoints.up('md')]: {
+         justifyContent: 'flex-end',
+         marginRight: theme.spacing(4),
+      },
+      [theme.breakpoints.down('sm')]: {
+         justifyContent: 'center',
+         marginBottom: theme.spacing(4),
+      },
+   },
+   grid: {
+      display: 'flex',
+      flexDirection: 'column',
+      margin: theme.spacing(5, 0),
+
+      [theme.breakpoints.up('md')]: {
+         flexDirection: 'row',
+      },
    },
 }));
 
@@ -89,11 +110,9 @@ export default function Summary() {
       };
    }, [setIndex]);
 
-   console.log('index', index);
-
    return (
       <div className={classes.container}>
-         <span style={{ fontSize: 60, fontFamily: 'Anton' }}>2022 ist dein Jahr</span>
+         <span style={{ fontSize: 60, fontFamily: 'Anton', textAlign: 'center' }}>2022 ist dein Jahr</span>
          <div className={classes.quoteContainer}>
             <AnimatePresence>
                <motion.div
@@ -133,26 +152,36 @@ export default function Summary() {
             </AnimatePresence>
          </div>
 
-         <div style={{ display: 'flex', flexDirection: 'row', marginTop: 48, marginBottom: 48 }}>
-            <Link to="/gutschein-wo2gmc">
-               <StaticImage
-                  src="../assets/landing-page/voucher_wo2gmc.png"
-                  layout="fullWidth"
-                  alt="4,95€ für die ersten fünf Monate!"
-                  objectFit="contain"
-                  style={{ width: 400, height: 400 }}
-               />
-            </Link>
-            <div style={{ marginTop: 8, display: 'flex', flexDirection: 'column' }}>
-               <Typography variant="h4">Starte jetzt in deinem 1a fit!</Typography>
+         <div className={classes.grid}>
+            <div className={classes.currentPromotion}>
+               <Link to="/gutschein-wo2gmc">
+                  <StaticImage
+                     src="../assets/landing-page/voucher_wo2gmc.png"
+                     layout="fullWidth"
+                     alt="4,95€ für die ersten fünf Monate!"
+                     objectFit="contain"
+                     style={{ borderRadius: 6, width: 250 }}
+                  />
+               </Link>
+            </div>
+            <div>
+               <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <Typography variant="h4" align="center">
+                     Starte jetzt in deinem 1a fit!
+                  </Typography>
 
-               <Typography variant="caption" align="center">
-                  Eine Mitgliedschaft, zwei Standorte: Vellmar | Kassel
-               </Typography>
-               <Typography style={{ marginTop: 32 }}>Jetzt anrufen und Probetrainings-Termin vereinbaren</Typography>
-               <Button variant="text" color="primary" href="tel:0561-86155516" startIcon={<Phone />}>
-                  0561 861 555 16
-               </Button>
+                  <Typography variant="caption" align="center">
+                     Eine Mitgliedschaft, zwei Standorte:{' '}
+                     <MaterialLink {...to('/location/vellmar')}>Vellmar</MaterialLink> |{' '}
+                     <MaterialLink {...to('/location/kassel')}>Kassel</MaterialLink>
+                  </Typography>
+                  <Typography align="center" style={{ marginTop: 32 }}>
+                     Jetzt anrufen und Probetrainings-Termin vereinbaren
+                  </Typography>
+                  <Button variant="text" color="primary" href="tel:0561-86155516" startIcon={<Phone />}>
+                     0561 861 555 16
+                  </Button>
+               </div>
             </div>
          </div>
       </div>
