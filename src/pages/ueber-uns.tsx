@@ -54,7 +54,7 @@ export default function UeberUns() {
    return (
       <Layout>
          <SEO title="Über uns" />
-         <div className={classes.container}>
+         <div className={classes.container} id="ueber-uns">
             <Grid container spacing={3}>
                <Section
                   image={

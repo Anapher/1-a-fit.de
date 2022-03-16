@@ -1,13 +1,22 @@
-import { AppBar, makeStyles, Toolbar, useMediaQuery, useScrollTrigger, useTheme } from '@material-ui/core';
+import {
+   AppBar,
+   Box,
+   IconButton,
+   makeStyles,
+   Toolbar,
+   useMediaQuery,
+   useScrollTrigger,
+   useTheme,
+} from '@material-ui/core';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
-import React from 'react';
-import Scrollspy from 'react-scrollspy';
+import React, { useState } from 'react';
 import LogoIcon from '../assets/logo_full.svg';
 import LogoIconWhite from '../assets/logo_full_white.svg';
 import { container, logoProportion } from '../style/shared';
-import to from '../utils/to';
-import NavButton from './NavButton';
+import NavigationBarButtons from './NavigationBarButtons';
+import NavigationDrawer, { NavigationLink } from './NavigationDrawer';
+import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme) => ({
    appbar: {
@@ -29,9 +38,6 @@ const useStyles = makeStyles((theme) => ({
       position: 'fixed',
       zIndex: 1100,
    },
-   activeSection: {
-      color: theme.palette.secondary.light,
-   },
    logo: {
       width: 60,
       height: 60 * logoProportion,
@@ -52,20 +58,6 @@ const useStyles = makeStyles((theme) => ({
          paddingLeft: 0,
       },
    },
-   navLink: {
-      minWidth: 96,
-      padding: '0.9375rem',
-      fontWeight: 400,
-      fontSize: 13.5,
-      textTransform: 'uppercase',
-      '&:hover,&:focus': {
-         color: 'inherit',
-         background: 'rgba(200, 200, 200, 0.2)',
-      },
-      [theme.breakpoints.down('xs')]: {
-         minWidth: 0,
-      },
-   },
 }));
 
 type Props = {
@@ -74,10 +66,21 @@ type Props = {
    transparentUntil?: number;
 };
 
+const links: NavigationLink[] = [
+   { title: 'Vellmar', to: '/location/vellmar' },
+   { title: 'Kassel', to: '/location/kassel' },
+   { title: 'Kurse', to: '/#kurse' },
+   { title: 'Über uns', to: '/ueber-uns' },
+];
+
 export default function Header({ transparent, fixed, transparentUntil }: Props) {
    const classes = useStyles();
    const theme = useTheme();
    const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
+
+   const [drawerOpen, setDrawerOpen] = useState(false);
+
+   const onToggleDrawer = () => setDrawerOpen((v) => !v);
 
    const trigger = useScrollTrigger({
       threshold: isMobile ? 45 : transparentUntil,
@@ -96,6 +99,11 @@ export default function Header({ transparent, fixed, transparentUntil }: Props) 
          ])}
       >
          <Toolbar className={classes.toolbar}>
+            {isMobile && (
+               <IconButton size="large" edge="start" color="inherit" aria-label="Menü öffnen" onClick={onToggleDrawer}>
+                  <MenuIcon />
+               </IconButton>
+            )}
             <Link to="/">
                {trigger || !transparent ? (
                   <LogoIcon className={classes.logo} />
@@ -103,22 +111,12 @@ export default function Header({ transparent, fixed, transparentUntil }: Props) 
                   <LogoIconWhite className={classes.logo} />
                )}
             </Link>
-            <div style={{ flex: 1 }} />
-            <Scrollspy
-               items={['vellmar', 'kassel', 'kurse']}
-               currentClassName={classes.activeSection}
-               style={{ marginTop: 0, marginBottom: 0, paddingLeft: 0 }}
-            >
-               <NavButton {...to('/location/vellmar')} className={classes.navLink}>
-                  Vellmar
-               </NavButton>
-               <NavButton {...to('/location/kassel')} className={classes.navLink}>
-                  Kassel
-               </NavButton>
-               <NavButton {...to('/#kurse')} className={classes.navLink}>
-                  Kurse
-               </NavButton>
-            </Scrollspy>
+            {!isMobile && (
+               <Box display="flex" flexDirection="column" alignItems="flex-end" flexGrow={1}>
+                  <NavigationBarButtons links={links} />
+               </Box>
+            )}
+            {isMobile && <NavigationDrawer links={links} onClose={onToggleDrawer} open={drawerOpen} />}
          </Toolbar>
       </AppBar>
    );
