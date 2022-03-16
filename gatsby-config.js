@@ -15,10 +15,10 @@ module.exports = {
       ],
       vouchers: [
          {
-            id: 'k2cgi',
-            image: 'voucher/voucher_k2cgi.png',
-            file: 'voucher/voucher_k2cgi.pdf',
-            title: 'Gutschein für 6 Monate Training für 60€',
+            id: '5f6jh',
+            image: 'voucher/voucher_5f6jh.png',
+            file: 'voucher/voucher_5f6jh.pdf',
+            title: 'Einen Monat gratis trainieren',
          },
       ],
       maps: {

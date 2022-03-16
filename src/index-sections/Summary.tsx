@@ -154,11 +154,11 @@ export default function Summary() {
 
          <div className={classes.grid}>
             <div className={classes.currentPromotion}>
-               <Link to="/gutschein-wo2gmc">
+               <Link to="/gutschein-5f6jh">
                   <StaticImage
-                     src="../assets/landing-page/voucher_wo2gmc.png"
+                     src="../../content/voucher/voucher_5f6jh.png"
                      layout="fullWidth"
-                     alt="4,95€ für die ersten fünf Monate!"
+                     alt="Ersten Monat gratis trainieren!"
                      objectFit="contain"
                      style={{ borderRadius: 6, width: 250 }}
                   />
