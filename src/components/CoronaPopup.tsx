@@ -11,7 +11,7 @@ export default function CoronaPopup() {
          <DialogTitle>Corona Informationen</DialogTitle>
          <DialogContent>
             <DialogContentText>
-               Das 1a fit hat für dich geöffnet. Nach den Vorgaben der hessischen Landesregierung gilt 2G+.
+            Das 1a fit hat für dich geöffnet. Nach den Vorgaben der hessischen Landesregierung gilt 3G.
             </DialogContentText>
             <DialogActions>
                <Button onClick={handleClose}>Schließen</Button>
