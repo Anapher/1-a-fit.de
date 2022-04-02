@@ -1,6 +1,5 @@
 import { Box, makeStyles } from '@material-ui/core';
 import React from 'react';
-import CoronaPopup from '../components/CoronaPopup';
 import Layout from '../components/Layout';
 import SEO from '../components/seo';
 import Courses from '../index-sections/Courses';
@@ -29,7 +28,6 @@ const IndexPage = () => {
       <Layout overlayContent transparentUntil={300}>
          <SEO />
          <LandingPage />
-         <CoronaPopup />
          <div className={classes.content}>
             <div id="studio">
                <Summary />
