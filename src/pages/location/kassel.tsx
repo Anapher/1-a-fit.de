@@ -2,8 +2,9 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import SEO from '../../components/seo';
 import { useStaticQuery, graphql } from 'gatsby';
-import { makeStyles, Typography } from '@material-ui/core';
+import { Box, Grid, makeStyles, Typography } from '@material-ui/core';
 import { container } from '../../style/shared';
+import { StaticImage } from 'gatsby-plugin-image';
 
 const useStyles = makeStyles({
    container: { ...container, paddingTop: 32, paddingBottom: 32 },
@@ -62,8 +63,28 @@ export default function kassel() {
                         left: 0,
                      }}
                      allowFullScreen
-                  ></iframe>
+                  />
                </div>
+               <Box mt={4} display="flex" flexDirection="row">
+                  <Grid container spacing={4}>
+                     <Grid item xs={6} style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        <StaticImage
+                           src="../../assets/kassel/ks_logo.png"
+                           alt="Kassel"
+                           objectFit="contain"
+                           style={{ width: '100%', height: '100%', maxWidth: 320 }}
+                        />
+                     </Grid>
+                     <Grid item xs={6}>
+                        <StaticImage
+                           src="../../assets/kassel/eu_logo.png"
+                           alt="Kassel"
+                           objectFit="contain"
+                           style={{ width: '100%', height: '100%', maxWidth: 320 }}
+                        />
+                     </Grid>
+                  </Grid>
+               </Box>
             </div>
          </div>
       </Layout>
