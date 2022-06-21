@@ -41,9 +41,11 @@ const useStyles = makeStyles((theme) => ({
    membershipButton: {
       borderRadius: 36,
       color: 'black',
-      minWidth: 400,
+      minWidth: 260,
       backgroundColor: theme.palette.secondary.main,
       boxShadow: theme.shadows[6],
+      margin: theme.spacing(2),
+      textAlign: 'center',
 
       [theme.breakpoints.down('xs')]: {
          minWidth: 0,
@@ -53,6 +55,12 @@ const useStyles = makeStyles((theme) => ({
          backgroundColor: theme.palette.secondary.light,
       },
    },
+   membershipButtonContainer: {
+      flexDirection: 'row',
+      [theme.breakpoints.down('xs')]: {
+         flexDirection: 'column',
+      },
+   },
 }));
 
 export default function FitnessInfo() {
@@ -60,7 +68,8 @@ export default function FitnessInfo() {
 
    const {
       allMdx: { edges },
-      contract,
+      contract12,
+      contract24,
    } = useStaticQuery(graphql`
       query {
          allMdx(filter: { fileAbsolutePath: { regex: "/fitnessinfo/" } }) {
@@ -79,7 +88,11 @@ export default function FitnessInfo() {
                }
             }
          }
-         contract: file(relativePath: { eq: "downloads/Mitgliedsvertrag.pdf" }) {
+         contract12: file(relativePath: { eq: "downloads/Mittgliedsvertrag_12_Monate.pdf" }) {
+            publicURL
+            name
+         }
+         contract24: file(relativePath: { eq: "downloads/Mittgliedsvertrag_24_Monate.pdf" }) {
             publicURL
             name
          }
@@ -150,15 +163,30 @@ export default function FitnessInfo() {
                </>
             )}
          </InfoDialog>
-         <Box display="flex" justifyContent="center" mt={4}>
+         <Box
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
+            mt={4}
+            className={classes.membershipButtonContainer}
+         >
             <Button
                variant="outlined"
                color="secondary"
-               href={contract.publicURL}
+               href={contract12.publicURL}
                className={classes.membershipButton}
                target="_blank"
             >
-               Jetzt Mitglied werden
+               Jetzt für 12 Monate Mitglied werden
+            </Button>
+            <Button
+               variant="outlined"
+               color="secondary"
+               href={contract24.publicURL}
+               className={classes.membershipButton}
+               target="_blank"
+            >
+               Jetzt für 24 Monate Mitglied werden
             </Button>
          </Box>
       </div>
