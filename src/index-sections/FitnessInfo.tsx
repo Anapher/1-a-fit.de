@@ -177,7 +177,7 @@ export default function FitnessInfo() {
                className={classes.membershipButton}
                target="_blank"
             >
-               Jetzt für 12 Monate Mitglied werden
+               Jetzt mit Testabo starten
             </Button>
             <Button
                variant="outlined"
@@ -186,7 +186,7 @@ export default function FitnessInfo() {
                className={classes.membershipButton}
                target="_blank"
             >
-               Jetzt für 24 Monate Mitglied werden
+               Jetzt mit Sparabo starten
             </Button>
          </Box>
       </div>
