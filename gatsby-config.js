@@ -18,7 +18,7 @@ module.exports = {
             id: '5f6jh',
             image: 'voucher/voucher_5f6jh.png',
             file: 'voucher/voucher_5f6jh.pdf',
-            title: 'Einen Monat gratis trainieren',
+            title: 'Jetzt starten, ab 2023 zahlen!',
          },
       ],
       maps: {
