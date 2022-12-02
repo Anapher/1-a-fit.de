@@ -15,9 +15,9 @@ module.exports = {
       ],
       vouchers: [
          {
-            id: '5f6jh',
-            image: 'voucher/voucher_5f6jh.png',
-            file: 'voucher/voucher_5f6jh.pdf',
+            id: 'k2cgi',
+            image: 'voucher/voucher_k2cgi.png',
+            file: 'voucher/voucher_k2cgi.pdf',
             title: 'Jetzt starten, ab 2023 zahlen!',
          },
       ],

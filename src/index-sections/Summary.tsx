@@ -154,9 +154,9 @@ export default function Summary() {
 
          <div className={classes.grid}>
             <div className={classes.currentPromotion}>
-               <Link to="/gutschein-5f6jh">
+               <Link to="/gutschein-k2cgi">
                   <StaticImage
-                     src="../../content/voucher/voucher_5f6jh.png"
+                     src="../../content/voucher/voucher_k2cgi.png"
                      layout="fullWidth"
                      alt="Ersten Monat gratis trainieren!"
                      objectFit="contain"
