@@ -18,7 +18,7 @@ module.exports = {
             id: 'k2cgi',
             image: 'voucher/voucher_k2cgi.png',
             file: 'voucher/voucher_k2cgi.pdf',
-            title: 'Jetzt starten, ab 2023 zahlen!',
+            title: 'Jetzt im 1a fit trainieren',
          },
       ],
       maps: {
