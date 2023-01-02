@@ -112,7 +112,7 @@ export default function Summary() {
 
    return (
       <div className={classes.container}>
-         <span style={{ fontSize: 60, fontFamily: 'Anton', textAlign: 'center' }}>2022 ist dein Jahr</span>
+         <span style={{ fontSize: 60, fontFamily: 'Anton', textAlign: 'center' }}>2023 ist dein Jahr</span>
          <div className={classes.quoteContainer}>
             <AnimatePresence>
                <motion.div
