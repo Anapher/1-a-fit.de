@@ -154,7 +154,7 @@ export default function Summary() {
 
          <div className={classes.grid}>
             <div className={classes.currentPromotion}>
-               <Link to="/gutschein-k2cgi">
+               <Link to="/gutschein-5f6jh">
                   <StaticImage
                      src="../../content/voucher/voucher_k2cgi.png"
                      layout="fullWidth"

@@ -15,7 +15,7 @@ module.exports = {
       ],
       vouchers: [
          {
-            id: 'k2cgi',
+            id: '5f6jh',
             image: 'voucher/voucher_k2cgi.png',
             file: 'voucher/voucher_k2cgi.pdf',
             title: 'Jetzt im 1a fit trainieren',
