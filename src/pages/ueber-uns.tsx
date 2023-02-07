@@ -152,12 +152,6 @@ export default function UeberUns() {
                      <b>Social Media Assistent / Minijob</b> Dein Leben ist bunt! Du lebst Fitness in allen Bereichen!
                      Bewirb dich und sei Teil unserer Fitnessgemeinschaft. Wenn Du Erfahrnung im Bereich Facebook und
                      Instagram hast, motiviert und kreativ bist, dann suchen wir genau dich.
-                     <br />
-                     <br />
-                     <b>Facility Managment / Minijob</b> Als handwerklich versierter Mitarbeiter findest du im 1afit ein
-                     perfektes Aufgabengebiet. Es geht mal was kaputt, die Blätter fallen von den Bäumen und der Rasen
-                     wächst auch wie verrückt. Ideal sind Kenntnisse im Bereich Elektro. Passt für dich? Dann bewirb
-                     dich jetzt!
                   </Typography>
                </Section>
             </Grid>
