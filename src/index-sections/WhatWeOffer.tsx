@@ -44,6 +44,7 @@ export default function WhatWeOffer() {
    const classes = useStyles();
 
    const {
+      allMdx: { edges },
       site: {
          siteMetadata: {
             affilinet: { bodyattackImg, bodyattackUrl },
@@ -51,6 +52,22 @@ export default function WhatWeOffer() {
       },
    } = useStaticQuery(graphql`
       query {
+         allMdx(filter: { internal: { contentFilePath: { regex: "/offers/" } } }) {
+            edges {
+               node {
+                  frontmatter {
+                     image {
+                        childImageSharp {
+                           gatsbyImageData(layout: CONSTRAINED, width: 500)
+                        }
+                     }
+                     title
+                     orderNumber
+                  }
+                  body
+               }
+            }
+         }
          site {
             siteMetadata {
                affilinet {
@@ -61,8 +78,6 @@ export default function WhatWeOffer() {
          }
       }
    `);
-
-   const edges = [];
 
    const [dialogOpen, setDialogOpen] = useState(false);
    const [dialogChild, setDialogChild] = useState(null);
