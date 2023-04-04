@@ -66,28 +66,8 @@ const useStyles = makeStyles((theme) => ({
 export default function FitnessInfo() {
    const classes = useStyles();
 
-   const {
-      allMdx: { edges },
-      contract12,
-      contract24,
-   } = useStaticQuery(graphql`
+   const { contract12, contract24 } = useStaticQuery(graphql`
       query {
-         allMdx(filter: { fileAbsolutePath: { regex: "/fitnessinfo/" } }) {
-            edges {
-               node {
-                  frontmatter {
-                     image {
-                        childImageSharp {
-                           gatsbyImageData(layout: CONSTRAINED, width: 500)
-                        }
-                     }
-                     title
-                     orderNumber
-                  }
-                  body
-               }
-            }
-         }
          contract12: file(relativePath: { eq: "downloads/Mittgliedsvertrag_12_Monate.pdf" }) {
             publicURL
             name
@@ -98,6 +78,8 @@ export default function FitnessInfo() {
          }
       }
    `);
+
+   const edges = [];
 
    const [dialogOpen, setDialogOpen] = useState(false);
    const [dialogChild, setDialogChild] = useState(null);
