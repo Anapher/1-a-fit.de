@@ -171,9 +171,10 @@ export default function Summary() {
                   </Typography>
 
                   <Typography variant="caption" align="center">
-                     Eine Mitgliedschaft, zwei Standorte:{' '}
+                     Eine Mitgliedschaft, drei Standorte:{' '}
                      <MaterialLink {...to('/location/vellmar')}>Vellmar</MaterialLink> |{' '}
-                     <MaterialLink {...to('/location/kassel')}>Kassel</MaterialLink>
+                     <MaterialLink {...to('/location/kassel')}>Kassel</MaterialLink> |{' '}
+                     <MaterialLink {...to('/location/calden')}>Calden</MaterialLink>
                   </Typography>
                   <Typography align="center" style={{ marginTop: 32 }}>
                      Jetzt anrufen und Probetrainings-Termin vereinbaren

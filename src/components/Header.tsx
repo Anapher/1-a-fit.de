@@ -69,6 +69,7 @@ type Props = {
 const links: NavigationLink[] = [
    { title: 'Vellmar', to: '/location/vellmar' },
    { title: 'Kassel', to: '/location/kassel' },
+   { title: 'Calden', to: '/location/calden' },
    { title: 'Kurse', to: '/#kurse' },
    { title: 'Über uns', to: '/ueber-uns' },
 ];
@@ -100,7 +101,7 @@ export default function Header({ transparent, fixed, transparentUntil }: Props) 
       >
          <Toolbar className={classes.toolbar}>
             {isMobile && (
-               <IconButton size="large" edge="start" color="inherit" aria-label="Menü öffnen" onClick={onToggleDrawer}>
+               <IconButton size="medium" edge="start" color="inherit" aria-label="Menü öffnen" onClick={onToggleDrawer}>
                   <MenuIcon />
                </IconButton>
             )}

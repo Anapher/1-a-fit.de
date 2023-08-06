@@ -34,7 +34,7 @@ export default function NavigationBarButtons({ links }: Props) {
 
    return (
       <Scrollspy
-         items={['vellmar', 'kassel', 'kurse', 'ueber-uns']}
+         items={['vellmar', 'kassel', 'calden', 'kurse', 'ueber-uns']}
          currentClassName={classes.activeSection}
          style={{ marginTop: 0, marginBottom: 0, paddingLeft: 0 }}
       >
