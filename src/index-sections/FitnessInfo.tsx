@@ -1,21 +1,9 @@
-import {
-   Box,
-   Button,
-   ButtonBase,
-   Grid,
-   makeStyles,
-   Typography,
-   DialogTitle,
-   DialogContent,
-   DialogContentText,
-   DialogActions,
-} from '@material-ui/core';
+import to from '../utils/to';
+import { Box, Button, ButtonBase, Grid, makeStyles, Typography } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React, { useState } from 'react';
 import { container, fixedFullWidthGrid } from '../style/shared';
 import _ from 'lodash';
-import InfoDialog from '../components/InfoDialog';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 const useStyles = makeStyles((theme) => ({
@@ -83,8 +71,8 @@ export default function FitnessInfo() {
                      }
                      title
                      orderNumber
+                     slug
                   }
-                  body
                }
             }
          }
@@ -99,21 +87,6 @@ export default function FitnessInfo() {
       }
    `);
 
-   const [dialogOpen, setDialogOpen] = useState(false);
-   const [dialogChild, setDialogChild] = useState(null);
-
-   const handleCloseDialog = () => setDialogOpen(false);
-
-   const descriptionElementRef = React.useRef<HTMLElement>(null);
-   React.useEffect(() => {
-      if (dialogOpen) {
-         const { current: descriptionElement } = descriptionElementRef;
-         if (descriptionElement !== null) {
-            descriptionElement.focus();
-         }
-      }
-   }, [dialogOpen]);
-
    return (
       <div className={classes.container}>
          <Grid container spacing={6} className={classes.fixedFullWidthGrid}>
@@ -121,10 +94,7 @@ export default function FitnessInfo() {
                <Grid item key={node.frontmatter.orderNumber} sm={4} xs={12} className={classes.gridItemFill}>
                   <ButtonBase
                      className={classes.roundedButton}
-                     onClick={() => {
-                        setDialogOpen(true);
-                        setDialogChild(node);
-                     }}
+                     {...to(`pages/${node.frontmatter.slug}`)}
                      aria-label={node.frontmatter.title}
                   >
                      <GatsbyImage
@@ -140,29 +110,6 @@ export default function FitnessInfo() {
                </Grid>
             ))}
          </Grid>
-         <InfoDialog open={dialogOpen} onClose={handleCloseDialog}>
-            {dialogChild && (
-               <>
-                  <DialogTitle>{dialogChild.frontmatter.title}</DialogTitle>
-                  <DialogContent>
-                     <DialogContentText tabIndex={-1} ref={descriptionElementRef}>
-                        {dialogChild && <MDXRenderer>{dialogChild.body}</MDXRenderer>}
-                     </DialogContentText>
-                     <Box display="flex" justifyContent="center" flexDirection="column" alignItems="center">
-                        <Button variant="contained" color="secondary" href="tel:0561-86155516">
-                           Jetzt anrufen und Termin vereinbaren!
-                        </Button>
-                        <Typography style={{ marginTop: 8 }}>Tel.: 0561 861 555 16</Typography>
-                     </Box>
-                  </DialogContent>
-                  <DialogActions>
-                     <Button onClick={handleCloseDialog} color="primary">
-                        Schließen
-                     </Button>
-                  </DialogActions>
-               </>
-            )}
-         </InfoDialog>
          <Box
             display="flex"
             justifyContent="center"

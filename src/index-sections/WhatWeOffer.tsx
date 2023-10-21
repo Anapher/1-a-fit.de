@@ -7,38 +7,22 @@ import {
    Grid,
    makeStyles,
    Typography,
-   DialogTitle,
-   DialogContent,
-   DialogContentText,
-   DialogActions,
    Box,
    useMediaQuery,
    useTheme,
 } from '@material-ui/core';
 import { graphql, useStaticQuery } from 'gatsby';
-import React, { useState } from 'react';
+import React from 'react';
 import { container, fixedFullWidthGrid, logoProportion } from '../style/shared';
 import _ from 'lodash';
-import InfoDialog from '../components/InfoDialog';
-import { MDXRenderer } from 'gatsby-plugin-mdx';
 import LogoIcon from '../assets/logo_full.svg';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
+import to from '../utils/to';
 
-type FitnessOffer = {
-   desc: string;
-   title: React.ReactNode;
-   imgFluid: any;
-};
-
-type ImageInfo = {
-   name: string;
-   childImageSharp: { fluid: any };
-};
-
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles({
    fixedFullWidthGrid,
    container,
-}));
+});
 
 export default function WhatWeOffer() {
    const classes = useStyles();
@@ -63,8 +47,8 @@ export default function WhatWeOffer() {
                      }
                      title
                      orderNumber
+                     slug
                   }
-                  body
                }
             }
          }
@@ -78,21 +62,6 @@ export default function WhatWeOffer() {
          }
       }
    `);
-
-   const [dialogOpen, setDialogOpen] = useState(false);
-   const [dialogChild, setDialogChild] = useState(null);
-
-   const handleCloseDialog = () => setDialogOpen(false);
-
-   const descriptionElementRef = React.useRef<HTMLElement>(null);
-   React.useEffect(() => {
-      if (dialogOpen) {
-         const { current: descriptionElement } = descriptionElementRef;
-         if (descriptionElement !== null) {
-            descriptionElement.focus();
-         }
-      }
-   }, [dialogOpen]);
 
    const theme = useTheme();
    const isMobile = useMediaQuery(theme.breakpoints.down('xs'));
@@ -124,7 +93,7 @@ export default function WhatWeOffer() {
             )}
          </Box>
          <Grid container spacing={isMobile ? 2 : 4} className={classes.fixedFullWidthGrid}>
-            {_.orderBy(edges, (x) => x.node.frontmatter.orderNumber).map(({ node: { frontmatter, body } }) => (
+            {_.orderBy(edges, (x) => x.node.frontmatter.orderNumber).map(({ node: { frontmatter } }) => (
                <Grid key={frontmatter.orderNumber} item md={3} sm={4} xs={6}>
                   <Card
                      style={{
@@ -147,14 +116,7 @@ export default function WhatWeOffer() {
                         </Typography>
                      </CardContent>
                      <CardActions>
-                        <Button
-                           size="small"
-                           color="primary"
-                           onClick={() => {
-                              setDialogChild({ frontmatter, body });
-                              setDialogOpen(true);
-                           }}
-                        >
+                        <Button size="small" color="primary" {...to(`pages/${frontmatter.slug}`)}>
                            Mehr erfahren
                         </Button>
                      </CardActions>
@@ -183,23 +145,6 @@ export default function WhatWeOffer() {
                </Card>
             </Grid>
          </Grid>
-         <InfoDialog open={dialogOpen} onClose={handleCloseDialog}>
-            {dialogChild && (
-               <>
-                  <DialogTitle>{dialogChild.frontmatter.title}</DialogTitle>
-                  <DialogContent>
-                     <DialogContentText tabIndex={-1} ref={descriptionElementRef}>
-                        {dialogChild && <MDXRenderer>{dialogChild.body}</MDXRenderer>}
-                     </DialogContentText>
-                  </DialogContent>
-                  <DialogActions>
-                     <Button onClick={handleCloseDialog} color="primary">
-                        Schließen
-                     </Button>
-                  </DialogActions>
-               </>
-            )}
-         </InfoDialog>
       </div>
    );
 }
