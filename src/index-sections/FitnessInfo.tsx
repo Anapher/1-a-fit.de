@@ -76,11 +76,11 @@ export default function FitnessInfo() {
                }
             }
          }
-         contract12: file(relativePath: { eq: "downloads/Mittgliedsvertrag_12_Monate.pdf" }) {
+         contract12: file(relativePath: { eq: "downloads/Mitgliedsvertrag_12_Monate.pdf" }) {
             publicURL
             name
          }
-         contract24: file(relativePath: { eq: "downloads/Mittgliedsvertrag_24_Monate.pdf" }) {
+         contract24: file(relativePath: { eq: "downloads/Mitgliedsvertrag_24_Monate.pdf" }) {
             publicURL
             name
          }
