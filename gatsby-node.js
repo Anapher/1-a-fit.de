@@ -8,33 +8,6 @@
 const path = require(`path`);
 
 exports.createPages = async ({ graphql, actions }) => {
-   const { createPage } = actions;
-   const voucherTemplate = path.resolve(`src/templates/Voucher.tsx`);
-   const result = await graphql(`
-      query {
-         site {
-            siteMetadata {
-               vouchers {
-                  file
-                  id
-                  image
-                  title
-               }
-            }
-         }
-      }
-   `);
-
-   result.data.site.siteMetadata.vouchers.forEach((voucher) => {
-      createPage({
-         path: `gutschein-${voucher.id}`,
-         component: voucherTemplate,
-         context: {
-            ...voucher,
-         },
-      });
-   });
-
    const basicMdxPage = path.resolve(`./src/templates/BasicMdxPage.tsx`);
 
    const { data } = await graphql(`

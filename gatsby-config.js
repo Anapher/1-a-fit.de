@@ -13,14 +13,6 @@ module.exports = {
          ['Bauch-Fit', 'Rücken-Fit', 'Rücken-Fit', 'Bauch-Fit', 'Bauch-Fit'],
          ['Bauch/Beine/Po', 'Bauch/Beine/Po', 'Bauch/Beine/Po', 'Bauch/Beine/Po', 'Bauch/Beine/Po'],
       ],
-      vouchers: [
-         {
-            id: '5f6jh',
-            image: 'voucher/voucher_k2cgi.png',
-            file: 'voucher/voucher_k2cgi.pdf',
-            title: 'Jetzt im 1a fit trainieren',
-         },
-      ],
       maps: {
          vellmar: {
             src: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1761.8956453644996!2d9.467387131307557!3d51.35348729771868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47bb3eeff4836b69%3A0xa0402b272e75299e!2s1-a-fit!5e0!3m2!1sde!2sde!4v1598524359407!5m2!1sde!2sde',
