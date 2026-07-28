@@ -3,7 +3,8 @@ title: 'Impressum'
 ---
 
 1a fit Betriebs GmbH<br/>
-Geschäftsführer: Stefan Heiland<br/>
+Gründer: Stefan Heiland<br/>
+Geschäftsführerin: Sandra Heiland-Apell<br/>
 Brüder-Grimm-Str. 26<br/>
 34246 Vellmar<br/>
 Tel: 0561 861 555 16
